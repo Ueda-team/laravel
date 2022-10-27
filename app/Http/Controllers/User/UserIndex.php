@@ -7,13 +7,21 @@ use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserIndex extends Controller
 {
-    public function index($id): Factory|View|Application
+    public function index($id=""): Factory|View|Application
     {
         $user = User::where('user_id', $id)->first();
-        return view('user.user', ['user' => $user]);
+        if($user){
+            return view('user.user', ['user' => $user]);
+        }else{
+            if(Auth::check()){
+                return view('user.user', ['user' => Auth::user()]);
+            }
+            return view('auth.login');
+        }
+
     }
 }

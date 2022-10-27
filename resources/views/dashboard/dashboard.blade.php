@@ -12,7 +12,6 @@
            <li><a href="#">購入管理</a></li>
            <li><a href="#">ポートフォリオ</a></li>
            <li><a href="#">DM</a></li>
-           <li><a href="#">会員情報</a></li>
        </ul>
     </div>
 </x-app-layout>

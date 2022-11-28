@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    flex-direction: column;
+}
+.head1{
+    display: flex;
+    justify-content: space-between;
+}
+ul li{
+/background-color: #f5deb3;/
+padding: 10px 20px;
+}
+ul li #serch{
+    width: 400px;
+}
+ul li #serch_b{
+    width: 80px;
+    height: 40px;
+    background-color: #00008b;
+    color: #fff;
+}
+.login{
+    padding: 15px 30px;
+/background-color: #8fbc8f;/
+font-size: 20px;
+    text-align: right;
+}

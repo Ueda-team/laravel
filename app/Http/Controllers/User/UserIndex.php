@@ -22,6 +22,15 @@ class UserIndex extends Controller
             }
             return view('auth.login');
         }
+    }
 
+    public function work($id=""): Factory|View|Application
+    {
+        return view('user.work');
+    }
+
+    public function work_post()
+    {
+        return view('user.work-post');
     }
 }

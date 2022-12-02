@@ -4,9 +4,13 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Category;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class UserIndex extends Controller
@@ -29,8 +33,20 @@ class UserIndex extends Controller
         return view('user.work');
     }
 
-    public function work_post()
+    public function work_post(): Factory|View|Application
     {
-        return view('user.work-post');
+        $categories = Category::all();
+        $sort = [];
+        $sort[] = '選択してください';
+        foreach ($categories as $category){
+            $sort[] = $category->name;
+        }
+        return view('user.work-post', ['categories' => $sort]);
+    }
+
+    public function work_post_(Request $request): RedirectResponse
+    {
+        var_dump($request['title']);
+        exit();
     }
 }

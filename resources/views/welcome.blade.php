@@ -26,5 +26,10 @@
         <x-slot name="header">
         </x-slot>
     </x-app-layout>
+    <!-- JavaScript 検索ボックスキーワード -->
+    <script type="text/javascript">
+
+
+    </script>
     </body>
 </html>

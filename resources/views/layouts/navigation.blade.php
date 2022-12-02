@@ -3,7 +3,7 @@
     <nav>
         <ul class="head1">
             <li>
-                <img src="#" alt="logo">
+                <img src="{{ asset('img/logo.png') }}" alt="logo">
             </li>
             <li>
                 <input type="text" placeholder="キーワード検索" id="serch">

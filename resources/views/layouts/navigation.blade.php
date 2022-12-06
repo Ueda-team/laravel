@@ -7,7 +7,7 @@
             </li>
             <li>
                 <input type="text" placeholder="キーワード検索" id="serch">
-                <button type="button" id="serch_b">検索</button>
+                <button type="button" id="serch_b"></button>
             </li>
             <li>
                 <img src="#" alt="cart">
@@ -25,6 +25,6 @@
                 <img src="#" alt="mypage">
             </li>
         </ul>
-        <p class="login">ログイン/新規登録</p>
+        <p class="nav_login">ログイン/新規登録</p>
     </nav>
 </header>

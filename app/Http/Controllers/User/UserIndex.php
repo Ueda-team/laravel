@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Work;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -30,7 +31,8 @@ class UserIndex extends Controller
 
     public function work($id=""): Factory|View|Application
     {
-        return view('user.work');
+        $works = Work::where('user_id', Auth::user()->id)->all();
+        return view('user.work', ['works' => $works]);
     }
 
     public function work_post(): Factory|View|Application
@@ -44,9 +46,28 @@ class UserIndex extends Controller
         return view('user.work-post', ['categories' => $sort]);
     }
 
-    public function work_post_(Request $request): RedirectResponse
+    public function work_post_(Request $request): Application|Factory|View
     {
-        var_dump($request['title']);
-        exit();
+        $title = $request['title'];
+        $outline = $request['outline'];
+        $price = $request['price'];
+        $tag = $request['tag'];
+        $file = $request['file'];
+        $category = $request['category'];
+        $work = new Work();
+        $model = $work->create([
+            'title' => $title,
+            'outline' => $outline,
+            'price' => $price,
+            'tag' => $tag,
+            'file' => $file,
+            'category_id' => $category,
+            'preview' => 0,
+            'url' => '',
+            'user_id' => Auth::user()->id,
+            'auction_id' => 0,
+            'buy_id' => 0
+        ]);
+        return view('user.work-ok', ['work' => $model]);
     }
 }

@@ -7,7 +7,7 @@
 
     <div>
        <ul>
-           <li><a href="{{ url('/user/' .  Auth::user()->user_id . '/work') }}">出品管理</a></li>
+           <li><a href="{{ url('/user/' .  Auth::user()->user_id . '/works') }}">出品管理</a></li>
            <li><a href="#">依頼管理</a></li>
            <li><a href="#">購入管理</a></li>
            <li><a href="#">ポートフォリオ</a></li>

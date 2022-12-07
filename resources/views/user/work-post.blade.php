@@ -7,7 +7,6 @@
     {{ Form::text('tag', null) }}
     {{ Form::file('file', $attributes = []) }}
     {{ Form::open(['files' => true]) }}
-    {{ Form::open(['url' => url('/user/work-post')]) }}
     {{ Form::open(['method' => 'post']) }}
     {{ Form::submit('出品する') }}
     {{ Form::close() }}

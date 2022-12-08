@@ -1,31 +1,183 @@
-header{
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
 }
-.head1{
+
+/* 基本レイアウト */
+body {
+    margin: 0;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    background-color: #fff;
+    color: #4b4b4b;
+}
+
+main {
+    width: 100%;
+}
+
+/*header========================================*/
+.header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
-ul li img{
-    width: 170px;
-    padding: 0;
-    margin: 0;
+/*ALTElogo*/
+.logo {
+    width: 40%;
+    display: flex;
+    margin: auto;
+    padding: auto;
 }
-ul li #serch{
-    width: 400px;
-}
-ul li #serch_b{
+.logo a img {
     width: 80px;
-    height: 40px;
-    background-color: #00008b;
-    color: #fff;
+    margin: 0 10px;
 }
-.login{
-    padding: 15px 30px;
-/background-color: #8fbc8f;/
-font-size: 20px;
+.logo a {
+    text-decoration: none;
+}
+/*search*/
+.search {
+    padding: 15px;
+}
+.search_container{
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #4b4b4b;
+    padding: 3px 10px;
+    border-radius: 3px;
+    height: 2.3em;
+    width: 330px;
+    overflow: hidden;
+}
+.search_container input[type="text"]{
+    border: none;
+    height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+    outline: 0;
+}
+.search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    background: #4b4b4b;
+    color: #fff;
+    position: absolute;
+    width: 2.5em;
+    height: 2.8em;
+    right:0px;
+    top: -5px;
+    outline : none;
+    padding: 8px 13px;
+}
+
+
+/*nav*/
+.navigation {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.navigation ul li {
+    display: inline-block;
+    padding: 0 8px;
+}
+.navigation ul li a img {
+    width: 40px;
+    padding: 20px 8px 8px 8px;
+}
+.navigation li a{
+    position: relative;
+}
+
+.navigation li.current a,
+.navigation li a:hover{
+    color:#4b4b4b;
+}
+
+.navigation li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background:#4b4b4b;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);
+    transform-origin: center top;
+}
+
+/*現在地とhoverの設定*/
+.navigation li.current a::after,
+.navigation li a:hover::after {
+    transform: scale(1, 1);
+}
+
+/*footer1==============================================*/
+.footer-link {
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #cfcbcb;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-link ul {
+    display: flex;
+    padding: 50px 0;
+}
+.footer-link ul li {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4b4b4b;
+    font-family: MS PGothic;
+    margin: 10px 35px;
+}
+.footer-link ul li a {
+    transition: 0.3s;
+}
+.footer-link ul li a:hover {
+    color: rgb(99, 97, 97);
+    transition: 0.3s;
+}
+
+
+/*footer2==============================================*/
+.footer {
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #4b4b4b;
+    display: flex;
+}
+
+.footer-menu ul {
+
+    color: white;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+}
+.footer-menu ul li a {
+    color: aliceblue;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.footer p {
+    width: 100%;
+    color: aliceblue;
+    font-size: 11px;
     text-align: right;
+    padding: 25px 30px 0 0;
+
 }

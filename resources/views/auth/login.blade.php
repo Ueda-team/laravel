@@ -1,9 +1,5 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <img class="login_logo" src="{{ asset('img/logo.svg') }}" alt="logo" style="width: 10%; margin: 0 auto; padding: 0;">
-        </x-slot>
-
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -51,4 +47,8 @@
             </div>
         </form>
     </x-auth-card>
+    <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+        <p class="text-sm text-gray-600">まだアカウントを作成していない？</p>
+        <a href="{{ url('register') }}" class="text-base text-gray-600 hover:text-gray-900">アカウントを作成する</a>
+    </div>
 </x-guest-layout>

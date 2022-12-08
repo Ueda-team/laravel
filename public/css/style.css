@@ -188,7 +188,7 @@ body {
 .bg-white{
     width: 70vw;
     margin: 2px auto 0;
-    padding: 20px 0 0;
+    padding: 40px 0 40px;
 }
 .workpost_h2{
     font-size: 40px;
@@ -213,10 +213,6 @@ body {
     border-right-width: 100px;
     border-right-color: #fff;
 }
-.workpost_table tr td:nth-child(3){
-    background-color: #4b4b4b;
-    color: #fff;
-}
 .work_post{
     margin-left: 80%;
     margin-top: 20px;
@@ -228,3 +224,48 @@ body {
     color: #fff;
 }
 
+/*work==============================================*/
+.work_link{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4b4b4b;
+    color: #fff;
+}
+.work_p{
+    margin: 70px 50px 40px;
+    font-size: 24px;
+}
+.tablewrap{
+    border-top-color: #000;
+    border-top-width: 1px;
+    border-bottom-color-color: #000;
+    border-bottom-width-width: 1px;
+}
+.work_table{
+    margin: 30px 50px;
+    font-size: 20px;
+
+}
+.work_table tr{
+    border-top-width: 15px;
+    border-top-color: #fff;
+    border-bottom-width: 5px;
+    border-bottom-color: #fff;
+}
+.work_table tr td{
+    border-right-width: 50px;
+    border-right-color: #fff;
+
+}
+
+/*work-ok==============================================*/
+.workok_wrap{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 20px;
+}

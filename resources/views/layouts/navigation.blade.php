@@ -8,7 +8,7 @@
     display: flex;
     margin: auto;
     padding: auto;">
-            <a href="index.php">
+            <a href="/">
                 <img class=" width: 130px;
     margin: 0 10px;" src="img/logo.png" alt="ALTE">
             </a>
@@ -33,7 +33,7 @@
                 <li><a href=""><img src="img/auction.png" alt="info"></a></li>
                 <li><a href=""><img src="img/heart.png" alt="auction"></a></li>
                 <li><a href=""><img src="img/bell.png" alt="iine"></a></li>
-                <li><a href=""><img src="img/human.png" alt="mypage"></a></li>
+                <li><a href="{{ url('login') }}"><img src="img/human.png" alt="mypage"></a></li>
             </ul>
         </nav>
         <!--/nav-->

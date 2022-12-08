@@ -9,9 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * @method static where(string $string, mixed $id)
+ * @method create(array $array)
+ * @method static where(string $string, $id)
  */
-class User extends Authenticatable
+class Work extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,20 +22,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'title',
+        'outline',
+        'preview',
+        'price',
+        'url',
+        'category_id',
         'user_id',
-        'user_name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
+        'auction_id',
+        'buy_id',
     ];
 
     /**
@@ -43,6 +39,6 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'verified_at' => 'datetime',
     ];
 }

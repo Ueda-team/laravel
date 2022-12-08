@@ -1,9 +1,5 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <img class="login_logo" src="{{ asset('img/logo.png') }}" alt="logo" style="width: 45%; margin: 0 auto; padding: 0;">
-        </x-slot>
-
         <div class="mb-4 text-sm text-gray-600">
             {{ __('新しいパスワードを設定したい場合、入力されたメールアドレス宛てにパスワード再設定用のリンクを送信します。') }}
         </div>

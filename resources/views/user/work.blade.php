@@ -1,6 +1,7 @@
 <x-app-layout>
-    <a class="work_link" href="{{ url('/user/' .  Auth::user()->user_id . '/work/post') }}">出品する</a>
-    <p class="work_p">出品中の作品</p>
+    <div class="work_wrap">
+        <a class="work_link" href="{{ url('/user/' .  Auth::user()->user_id . '/work/post') }}">出品する</a>
+        <p class="work_p">出品中の作品</p>
 
         <?php
         foreach ($works as $work){
@@ -13,6 +14,8 @@
             echo "</div>";
         }
         ?>
+    </div>
+
 
 
 

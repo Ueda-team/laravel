@@ -25,6 +25,89 @@
     <x-app-layout>
         <x-slot name="header">
         </x-slot>
+
+        <div class="wrapper">
+            <div class="main1">
+                <div class="info1">
+                    <h2>カテゴリから探す</h2>
+                    <h4><a href="#">漫画</a></h4>
+                    <h4><a href="#">動画</a></h4>
+                    <h4><a href="#">音楽</a></h4>
+                    <h4><a href="#">IT</a></h4>
+                    <h4><a href="#">撮影</a></h4>
+                    <h4><a href="#">デザイン</a></h4>
+                    <h4><a href="#">イラスト</a></h4>
+                    <h4><a href="#">Webサイト</a></h4>
+                    <h4><a href="#">ナレーション</a></h4>
+                    <h4><a href="#">アニメーション</a></h4>
+                    <h4><a href="#">プログラミング</a></h4>
+                </div>
+            </div>
+            <div class="main2">
+                <div class="main_osusume">
+                    <h2>ロゴのおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+                <div class="main_osusume">
+                    <h2>アートのおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+                <div class="main_osusume">
+                    <h2>映像のおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+                <div class="main_osusume">
+                    <h2>イラストのおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+                <div class="main_osusume">
+                    <h2>漫画のおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+                <div class="main_osusume">
+                    <h2>音楽のおすすめ</h2>
+                    <div class="info2">
+                        <a href="#"><img src="image/osusume1.png"></a>
+                        <a href="#"><img src="image/osusume2.png"></a>
+                        <a href="#"><img src="image/osusume3.png"></a>
+                        <a href="#"><img src="image/osusume4.png"></a>
+                        <a href="#"><img src="image/osusume6.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </x-app-layout>
     </body>
 </html>

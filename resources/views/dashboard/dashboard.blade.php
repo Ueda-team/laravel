@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="dashboard_nav">
        <ul>
            <li><a href="{{ url('/user/' .  Auth::user()->user_id . '/works') }}">出品管理</a></li>
            <li><a href="#">依頼管理</a></li>
@@ -23,6 +23,7 @@
             {{ __('Log Out') }}
         </x-dropdown-link>
     </form>
+
 
 
 </x-app-layout>

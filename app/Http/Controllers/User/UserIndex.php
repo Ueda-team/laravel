@@ -68,4 +68,10 @@ class UserIndex extends Controller
         ]);
         return view('user.work-ok', ['work' => $model]);
     }
+
+    public function work_all(): Factory|View|Application
+    {
+        $works = Work::get();
+        return view('user.work-all', ['works' => $works]);
+    }
 }

@@ -15,8 +15,4 @@
         }
         ?>
     </div>
-
-
-
-
 </x-app-layout>

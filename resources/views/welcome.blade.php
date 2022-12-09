@@ -19,95 +19,58 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+
+        <!--------------------スライダー見た目-------------------------------------------------->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <!------------------------------------------------------------------------------------->
+
+        <!--------------------jQuery----------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <!------------------------------------------------------------------------------------->
+
+        <!--------------------スライダー動かすやつ----------------------------------------------->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <!------------------------------------------------------------------------------------->
+
+
     </head>
     <body class="antialiased">
 
     <x-app-layout>
         <x-slot name="header">
         </x-slot>
-
         <div class="wrapper">
-            <div class="main1">
-                <div class="info1">
-                    <h2>カテゴリから探す</h2>
-                    <h4><a href="#">漫画</a></h4>
-                    <h4><a href="#">動画</a></h4>
-                    <h4><a href="#">音楽</a></h4>
-                    <h4><a href="#">IT</a></h4>
-                    <h4><a href="#">撮影</a></h4>
-                    <h4><a href="#">デザイン</a></h4>
-                    <h4><a href="#">イラスト</a></h4>
-                    <h4><a href="#">Webサイト</a></h4>
-                    <h4><a href="#">ナレーション</a></h4>
-                    <h4><a href="#">アニメーション</a></h4>
-                    <h4><a href="#">プログラミング</a></h4>
-                </div>
+            <div class="slider">
+                <div><img src="{{ asset('img/top-slide/slide-1.webp') }}"></div>
+                <div><img src="{{ asset('img/top-slide/slide-2.webp') }}"></div>
+                <div><img src="{{ asset('img/top-slide/slide-3.webp') }}"></div>
             </div>
-            <div class="main2">
-                <div class="main_osusume">
-                    <h2>ロゴのおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
+            <div class="main">
+                <div class="info1">
+                    <h2>カテゴリーから探す</h2>
+                    <?php foreach ($categories as $category): ?>
+                        <h4><a href="#">{{$category->name}}</a></h4>
+                    <?php endforeach;?>
                 </div>
-                <div class="main_osusume">
-                    <h2>アートのおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
+                <div class="ranking">
+                    <h2>カテゴリー別ランキング</h2>
                 </div>
-                <div class="main_osusume">
-                    <h2>映像のおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
-                </div>
-                <div class="main_osusume">
-                    <h2>イラストのおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
-                </div>
-                <div class="main_osusume">
-                    <h2>漫画のおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
-                </div>
-                <div class="main_osusume">
-                    <h2>音楽のおすすめ</h2>
-                    <div class="info2">
-                        <a href="#"><img src="image/osusume1.png"></a>
-                        <a href="#"><img src="image/osusume2.png"></a>
-                        <a href="#"><img src="image/osusume3.png"></a>
-                        <a href="#"><img src="image/osusume4.png"></a>
-                        <a href="#"><img src="image/osusume6.png"></a>
-                    </div>
+                <div>
+
                 </div>
             </div>
         </div>
-
-
+        <script>
+            $('.slider').slick({
+                autoplay: true,       //自動再生
+                autoplaySpeed: 5000,  //自動再生のスピード
+                speed: 800,           //スライドするスピード
+                dots: true,           //スライド下のドット
+                arrows: true,         //左右の矢印
+                infinite: true,       //永久にループさせる
+            });
+        </script>
     </x-app-layout>
     </body>
 </html>

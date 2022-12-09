@@ -12,6 +12,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class UserIndex extends Controller
 {
     public function index($id=""): Factory|View|Application
@@ -74,4 +75,6 @@ class UserIndex extends Controller
         $works = Work::get();
         return view('user.work-all', ['works' => $works]);
     }
+
+
 }

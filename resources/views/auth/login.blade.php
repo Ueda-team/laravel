@@ -46,9 +46,10 @@
                 </x-primary-button>
             </div>
         </form>
+        <div class="flex flex-col sm:justify-center items-center pt-6  mt-6 mb-4 sm:pt-0;">
+            <p class="text-sm text-gray-600">まだアカウントを作成していない？</p>
+            <a href="{{ url('register') }}" class="text-base text-gray-600 hover:text-gray-900">アカウントを作成する</a>
+        </div>
     </x-auth-card>
-    <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-        <p class="text-sm text-gray-600">まだアカウントを作成していない？</p>
-        <a href="{{ url('register') }}" class="text-base text-gray-600 hover:text-gray-900">アカウントを作成する</a>
-    </div>
+
 </x-guest-layout>

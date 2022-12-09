@@ -19,7 +19,7 @@
     <body class="font-sans antialiased">
         <div class="bg-gray-100">
             @include('layouts.navigation')
-            <main class="bg-white">
+            <main class="">
                 {{ $slot }}
             </main>
             @include('layouts.footer')

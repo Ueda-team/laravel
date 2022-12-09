@@ -1,5 +1,6 @@
 <x-app-layout>
     <div class="workall_wrap">
+        <a class="work_link" href="{{ url('/user/' .  Auth::user()->user_id . '/work/post') }}">出品する</a>
         <h2 class="workall_h2">出品作品一覧</h2>
         <ul>
             <?php

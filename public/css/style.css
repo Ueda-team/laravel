@@ -206,7 +206,7 @@ main {
 }
 .footer-link ul {
     display: flex;
-    padding: 25px 0 0;
+    padding: 0 0 0;
 }
 .footer-link ul li {
     font-size: 16px;
@@ -223,14 +223,11 @@ main {
     transition: 0.3s;
 }
 
-
 /*footer2==============================================*/
 .footer {
     width:100%;
     background-color: #4b4b4b;
-    display: flex;
     justify-content: space-around;
-
 }
 .footer-menu{
     width: 100%;
@@ -246,7 +243,7 @@ main {
 .footer-menu ul li{
     width: 100%;
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 15px 30px;
 }
 .footer-menu ul li a {
     color: aliceblue;
@@ -261,8 +258,7 @@ main {
     font-size: 11px;
     text-align: right;
     margin: 0 auto;
-    padding: 25px 30px 0 0;
-
+    padding: 0 30px 0 0;
 }
 
 /*work-post==============================================*/

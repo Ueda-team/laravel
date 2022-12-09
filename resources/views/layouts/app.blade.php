@@ -12,14 +12,15 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+        @vite(['resources/css/app.css', 'resources/js/footerFixed.js'])
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     </head>
     <body class="font-sans antialiased">
         <div class="bg-gray-100">
             @include('layouts.navigation')
-            <main class="">
+            <main>
                 {{ $slot }}
             </main>
             @include('layouts.footer')

@@ -1,13 +1,13 @@
-<footer class="footer-link">
-    <ul>
-        <li><a href="#">はじめての方へ</a></li>
-        <li><a href="#">よくある質問</a></li>
-        <li><a href="#">ご利用ガイド</a></li>
-        <li><a href="#">ALTEのルール</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-    </ul>
-</footer>
-<footer class="footer">
+<footer class="footer" id="footer">
+    <div class="footer-link">
+        <ul>
+            <li><a href="#">はじめての方へ</a></li>
+            <li><a href="#">よくある質問</a></li>
+            <li><a href="#">ご利用ガイド</a></li>
+            <li><a href="#">ALTEのルール</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </div>
     <div class="footer-menu">
         <ul>
             <li><a href="">利用規約</a></li>

@@ -10,7 +10,7 @@
     padding: auto;">
             <a href="/">
                 <img class=" width: 130px;
-    margin: 0 10px;" src="img/logo.png" alt="ALTE">
+    margin: 0 10px;" src={{ asset("img/logo.png" ) }} alt="ALTE">
             </a>
 
 
@@ -29,11 +29,11 @@
         <!--nav-->
         <nav class="navigation">
             <ul>
-                <li><a href=""><img src="img/cart.png" alt="cart"></a></li>
-                <li><a href=""><img src="img/auction.png" alt="info"></a></li>
-                <li><a href=""><img src="img/heart.png" alt="auction"></a></li>
-                <li><a href=""><img src="img/bell.png" alt="iine"></a></li>
-                <li><a href="{{ url('login') }}"><img src="img/human.png" alt="mypage"></a></li>
+                <li><a href=""><img src={{ asset("img/cart.png") }} alt="cart"></a></li>
+                <li><a href=""><img src={{ asset("img/auction.png") }} alt="info"></a></li>
+                <li><a href=""><img src={{ asset("img/heart.png") }} alt="auction"></a></li>
+                <li><a href=""><img src={{ asset("img/bell.png") }} alt="iine"></a></li>
+                <li><a href="{{ url('login') }}"><img src={{ asset("img/human.png") }} alt="mypage"></a></li>
             </ul>
         </nav>
         <!--/nav-->

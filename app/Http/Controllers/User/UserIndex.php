@@ -29,7 +29,7 @@ class UserIndex extends Controller
 
     public function work($id=""): Factory|View|Application
     {
-        $works = Work::where('user_id', Auth::user()->id)->all();
+        $works = Work::where('user_id', Auth::user()->id)->get();
         return view('user.work', ['works' => $works]);
     }
 

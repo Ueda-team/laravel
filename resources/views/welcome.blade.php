@@ -19,12 +19,58 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+
+        <!--------------------スライダー見た目-------------------------------------------------->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <!------------------------------------------------------------------------------------->
+
+        <!--------------------jQuery----------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <!------------------------------------------------------------------------------------->
+
+        <!--------------------スライダー動かすやつ----------------------------------------------->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <!------------------------------------------------------------------------------------->
+
+
     </head>
     <body class="antialiased">
 
     <x-app-layout>
         <x-slot name="header">
         </x-slot>
+        <div class="wrapper">
+            <div class="slider">
+                <div><img src="{{ asset('img/top-slide/slide-1.webp') }}"></div>
+                <div><img src="{{ asset('img/top-slide/slide-2.webp') }}"></div>
+                <div><img src="{{ asset('img/top-slide/slide-3.webp') }}"></div>
+            </div>
+            <div class="main">
+                <div class="info1">
+                    <h2>カテゴリーから探す</h2>
+                    <?php foreach ($categories as $category): ?>
+                        <h4><a href="#">{{$category->name}}</a></h4>
+                    <?php endforeach;?>
+                </div>
+                <div class="ranking">
+                    <h2>カテゴリー別ランキング</h2>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $('.slider').slick({
+                autoplay: true,       //自動再生
+                autoplaySpeed: 5000,  //自動再生のスピード
+                speed: 800,           //スライドするスピード
+                dots: true,           //スライド下のドット
+                arrows: true,         //左右の矢印
+                infinite: true,       //永久にループさせる
+            });
+        </script>
     </x-app-layout>
     </body>
 </html>

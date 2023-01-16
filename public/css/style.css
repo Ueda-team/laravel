@@ -33,7 +33,6 @@ main {
     width: 40%;
     display: flex;
     margin: auto;
-    padding: auto;
 }
 .logo a img {
     width: 135px;
@@ -51,7 +50,7 @@ main {
     position: relative;
     box-sizing: border-box;
     border: 2px solid #4b4b4b;
-    padding: 3px px;
+    padding: 3px;
     border-radius: 3px;
     height: 2.3em;
     width: 330px;
@@ -66,13 +65,13 @@ main {
 }
 .search_container input[type="submit"]{
     cursor: pointer;
-    font-family: FontAwesome;
+    font-family: FontAwesome, serif;
     background: #4b4b4b;
     color: #fff;
     position: absolute;
     width: 2.5em;
     height: 2.8em;
-    right:0px;
+    right: 0;
     top: -5px;
     outline : none;
     padding: 8px 13px;
@@ -210,7 +209,7 @@ main {
     font-size: 16px;
     font-weight: 600;
     color: #4b4b4b;
-    font-family: MS PGothic;
+    font-family: MS PGothic, serif;
     margin: 10px 35px;
 }
 .footer-link ul li a {
@@ -226,6 +225,8 @@ main {
     width:100%;
     background-color: #4b4b4b;
     justify-content: space-around;
+    position: absolute;
+    bottom: 0;
 }
 .footer-menu{
     width: 100%;
@@ -322,8 +323,8 @@ main {
 .tablewrap{
     border-top-color: #000;
     border-top-width: 1px;
-    border-bottom-color-color: #000;
-    border-bottom-width-width: 1px;
+    border-bottom-color: #000;
+    border-bottom-width: 1px;
 }
 .work_table{
     margin: 30px 50px;

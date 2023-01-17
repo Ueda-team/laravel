@@ -39,8 +39,6 @@
 
 
     <x-app-layout>
-        <x-slot name="header">
-        </x-slot>
         <div class="wrapper">
             <div class="slider">
                 <div><img src="{{ asset('img/top-slide/slide-1.webp') }}"></div>

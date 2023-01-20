@@ -1,6 +1,7 @@
 <x-app-layout>
     <div class="work_wrap">
-        <a class="work_link" href="{{ url('/user/' .  Auth::user()->user_id . '/work/post') }}">出品する</a>
+        <a class="work_link" href="{{ url('/user/work/add') }}">マーケットに出す</a>
+        <a class="work_link" href="{{ url('/user/auction/add') }}">オークションに出す</a>
         <p class="work_p">出品中の作品</p>
 
         <?php

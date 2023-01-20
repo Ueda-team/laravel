@@ -1,29 +1,25 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="dashboard_nav">
-       <ul>
-           <li><a href="{{ url('/user/' .  Auth::user()->user_id . '/works') }}">出品管理</a></li>
-           <li><a href="#">依頼管理</a></li>
-           <li><a href="#">購入管理</a></li>
-           <li><a href="#">ポートフォリオ</a></li>
-           <li><a href="#">DM</a></li>
-       </ul>
+    <div class="dashboard-wrapper">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-avatar">
+                    <img src="{{ asset('img/no-icon.png') }}" alt="">
+                </div>
+                <p class="card-username">{{ $user->user_name }}</p>
+            </div>
+            <div class="card-menu">
+                <div class="card-menu-top">
+                    <p>メニュー</p>
+                </div>
+                <div class="card-menu-list">
+                    <ul>
+                        <li><a href="">出品管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h2>ダッシュボード</h2>
+        </div>
     </div>
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-
-        <x-dropdown-link :href="route('logout')"
-                         onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-            {{ __('Log Out') }}
-        </x-dropdown-link>
-    </form>
-
-
-
 </x-app-layout>

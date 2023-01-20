@@ -4,6 +4,7 @@
 @import url("footer.css");
 
 @import url("welcome.css");
+@import url("dashboard/dashboard.css");
 
 html {
     height: 100%;

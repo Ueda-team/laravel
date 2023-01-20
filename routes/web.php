@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Home\Home;
+use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\User\UserIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [Dashboard::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/user/work-all', [UserIndex::class, 'work_all']);
 

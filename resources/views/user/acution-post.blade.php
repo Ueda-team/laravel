@@ -17,12 +17,12 @@
                 <td>{{ Form::textarea('outline') }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('price', 'スタート価格') !!}</td>
-                <td>{{ Form::text('price', null) }}</td>
+                <td>{!! Form::label('start_price', '開始価格') !!}</td>
+                <td>{{ Form::text('start_price', null) }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('price', '終了価格') !!}</td>
-                <td>{{ Form::text('price', null) }}</td>
+                <td>{!! Form::label('max_price', '終了価格') !!}</td>
+                <td>{{ Form::text('max_price', null) }}</td>
             </tr>
             <tr>
                 <td>{!! Form::label('tag', 'タグ') !!}</td>

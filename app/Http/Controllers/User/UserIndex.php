@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Work;
+use App\Models\Auction;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -34,7 +35,7 @@ class UserIndex extends Controller
         return view('user.work', ['works' => $works]);
     }
 
-    public function work_post(): Factory|View|Application
+    public function work_add(): Factory|View|Application
     {
         $categories = Category::all();
         $sort = [];
@@ -45,7 +46,7 @@ class UserIndex extends Controller
         return view('user.work-post', ['categories' => $sort]);
     }
 
-    public function work_post_(Request $request): Application|Factory|View
+    public function work_post(Request $request): Application|Factory|View
     {
         $title = $request['title'];
         $outline = $request['outline'];
@@ -65,6 +66,51 @@ class UserIndex extends Controller
             'url' => '',
             'user_id' => Auth::user()->id,
             'auction_id' => 0,
+            'buy_id' => 0
+        ]);
+        return view('user.work-ok', ['work' => $model]);
+    }
+
+    public function auction_add(): Factory|View|Application
+    {
+        $categories =  Category::all();
+        $sort = [];
+        $sort[] = '選択してください';
+        foreach ($categories as $category){
+            $sort[] = $category->name;
+        }
+        return view('user.acution-post', ['categories' => $sort]);
+    }
+
+    public function auction_post(Request $request): Application|Factory|View
+    {
+        $title = $request['title'];
+        $outline = $request['outline'];
+        $start_price = $request['start_price'];
+        $max_price = $request['max_price'];
+        $tag = $request['tag'];
+        $file = $request['file'];
+        $category = $request['category'];
+        $auction = new Auction();
+        $auctionModel = $auction->create([
+            'start_price' => $start_price,
+            'max_price' => $max_price,
+            'start_date' => now(),
+            'end_date' => now(),
+            'status' => true
+        ]);
+        $work = new Work();
+        $model = $work->create([
+            'title' => $title,
+            'outline' => $outline,
+            'price' => $start_price,
+            'tag' => $tag,
+            'file' => $file,
+            'category_id' => $category,
+            'preview' => 0,
+            'url' => '',
+            'user_id' => Auth::user()->id,
+            'auction_id' => $auctionModel->id,
             'buy_id' => 0
         ]);
         return view('user.work-ok', ['work' => $model]);

@@ -7,6 +7,10 @@ Route::get('/user/{id?}', [UserIndex::class, 'index'])->name('user');
 
 Route::get('/user/{id?}/works', [UserIndex::class, 'work'])->name('work');
 
-Route::get('/user/{id?}/work/post', [UserIndex::class, 'work_post'])->name('work_post');
+Route::get('/user/work/add', [UserIndex::class, 'work_add'])->name('work_post');
 
-Route::post('/user/{id?}/work/post', [UserIndex::class, 'work_post_']);
+Route::post('/user/work/add', [UserIndex::class, 'work_post']);
+
+Route::get('/user/auction/add', [UserIndex::class, 'auction_add'])->name('acution_post');
+
+Route::post('/user/auction/add', [UserIndex::class, 'auction_post']);

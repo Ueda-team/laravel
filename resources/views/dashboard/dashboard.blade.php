@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-menu-list">
                     <ul>
-                        <li><a href="">出品管理</a></li>
+                        <li><a href="{{ route('dashboard-work') }}">出品管理</a></li>
                     </ul>
                 </div>
             </div>

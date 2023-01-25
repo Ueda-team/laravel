@@ -17,11 +17,7 @@
                 <td>{{ Form::textarea('outline') }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('price', 'スタート価格') !!}</td>
-                <td>{{ Form::text('price', null) }}</td>
-            </tr>
-            <tr>
-                <td>{!! Form::label('price', '終了価格') !!}</td>
+                <td>{!! Form::label('price', '価格') !!}</td>
                 <td>{{ Form::text('price', null) }}</td>
             </tr>
             <tr>

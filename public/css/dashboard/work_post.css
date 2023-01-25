@@ -1,0 +1,50 @@
+.workpost_wrapper {
+    margin: 2% 7%;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.workpost_title {
+    padding: 1.25rem 0 0 1.7rem;
+    font-size: 1.75em;
+}
+
+.workpost_wrapper table {
+    margin-left: 2rem;
+}
+
+.workpost_th {
+    padding: 1.25rem 1rem 0 1rem;
+    vertical-align: top;
+    text-align: left;
+}
+
+.workpost_th:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    left: -5px;
+    top: -4px;
+    width: 5px;
+    height: 5px;
+    background: #9E9E9E;
+}
+
+.workpost_wrapper td {
+    padding-top: 1rem;
+}
+
+.workpost_wrapper input, textarea, select {
+    border-radius: 0.25rem;
+}
+
+.workpost_wrapper input[type="file"] {
+    display: none;
+}
+
+.workpost_th_file {
+    padding: 10px 40px;
+    color: #ffffff;
+    background-color: #384878;
+    cursor: pointer;
+}

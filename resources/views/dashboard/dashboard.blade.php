@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="main">
-            <h2>ダッシュボード</h2>
+            <h2 class="dashboard-title">ダッシュボード</h2>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 

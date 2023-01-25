@@ -1,35 +1,34 @@
 <x-app-layout>
-    <div class="workpost_wrap">
-        <div class="workpost_wrapper" ></div>
-        <h2 class="workpost_h2">サービスの出品</h2>
+    <div class="workpost_wrapper">
+        <h2 class="workpost_title">サービスの出品</h2>
+        {{ Form::open() }}
         <table class="workpost_table">
-            <tr>{{ Form::open() }}</tr>
             <tr>
-                <td>{!! Form::label('category', 'カテゴリー') !!}</td>
-                <td>{{ Form::select('category', $categories, 0) }}</td>
+                <th class="workpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>
+                <td>
+                    {{ Form::select('category', ['自分の作品を売る', '仕事を募集する'], 0) }}
+                    {{ Form::select('category', $categories, 0) }}
+                </td>
             </tr>
             <tr>
-                <td>{!! Form::label('title', 'サービスタイトル') !!}</td>
+                <th class="workpost_th">{!! Form::label('title', 'サービスタイトル') !!}</th>
                 <td>{{ Form::text('title', null) }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('outline', 'サービス概要') !!}</td>
+                <th class="workpost_th">{!! Form::label('outline', 'サービス概要') !!}</th>
                 <td>{{ Form::textarea('outline') }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('price', '価格') !!}</td>
+                <th class="workpost_th">{!! Form::label('price', '価格') !!}</th>
                 <td>{{ Form::text('price', null) }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('tag', 'タグ') !!}</td>
+                <th class="workpost_th">{!! Form::label('tag', 'タグ') !!}</th>
                 <td>{{ Form::text('tag', null) }}</td>
             </tr>
             <tr>
-                <td>{!! Form::label('file', 'ファイル') !!}</td>
+                <th class="workpost_th_file">{!! Form::label('file', 'ファイル') !!}</th>
                 <td>{{ Form::file('file', $attributes = []) }}</td>
-            </tr>
-            <tr>
-                {{ Form::open(['files' => true]) }}
             </tr>
             <tr>
                 {{ Form::open(['method' => 'post']) }}

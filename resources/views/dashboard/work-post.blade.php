@@ -42,6 +42,4 @@
             {{ Form::close() }}
         </div>
     </div>
-
-
 </x-app-layout>

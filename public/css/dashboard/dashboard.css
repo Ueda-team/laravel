@@ -1,3 +1,6 @@
+@import url("work_post.css");
+@import url("auction_post.css");
+
 .dashboard-wrapper {
     margin: 2% 7%;
     display: flex;
@@ -44,7 +47,7 @@ a:hover {
     transition : 0.3s;
 }
 
-.main h2 {
+.dashboard-title {
     padding: 1.25rem;
     font-size: 1.75em;
 }

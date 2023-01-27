@@ -13,13 +13,13 @@
                 </div>
                 <div class="card-menu-list">
                     <ul>
-                        <li><a href="">出品管理</a></li>
+                        <li><a href="{{ route('dashboard-work') }}">出品管理</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="main">
-            <h2>ダッシュボード</h2>
+            <h2 class="dashboard-title">ダッシュボード</h2>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 

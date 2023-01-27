@@ -27,15 +27,20 @@
                 <td>{{ Form::text('tag', null) }}</td>
             </tr>
             <tr>
-                <th class="workpost_th_file">{!! Form::label('file', 'ファイル') !!}</th>
-                <td>{{ Form::file('file', $attributes = []) }}</td>
+                <th class="workpost_th">{!! Form::label('file_title', 'ファイル') !!}</th>
+                <td class="workpost_th_file">
+                    {!! Form::label('file', 'ファイル') !!}
+                    {{ Form::file('file', $attributes = []) }}
+                </td>
             </tr>
             <tr>
                 {{ Form::open(['method' => 'post']) }}
             </tr>
         </table>
-        {{ Form::submit('出品する',['class' => 'work_post']) }}
-        {{ Form::close() }}
+        <div class="work_post">
+            {{ Form::submit('出品する',['class' => 'work_post']) }}
+            {{ Form::close() }}
+        </div>
     </div>
 
 

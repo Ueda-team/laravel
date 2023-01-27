@@ -1,7 +1,7 @@
 .workpost_wrapper {
     margin: 2% 7%;
     background-color: #fff;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .workpost_title {
@@ -42,9 +42,31 @@
     display: none;
 }
 
-.workpost_th_file {
-    padding: 10px 40px;
+.workpost_th_file label{
+    padding: 0.625rem 2.5rem;
+    text-align: left;
     color: #ffffff;
-    background-color: #384878;
+    background-color: #4B4B4B;
+    border-radius: 0.5rem;
     cursor: pointer;
+}
+
+.work_post {
+    display: flex;
+    width: auto;
+}
+
+.work_post input{
+    border-radius: 0.5rem;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0.625rem 2.5rem;
+    max-width: 220px;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background: rgb(149,202,252);
+    background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
 }

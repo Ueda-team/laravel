@@ -68,7 +68,7 @@ class Dashboard extends BaseController
 
     public function auction_add(): Factory|View|Application
     {
-        $categories =  Category::all();
+        $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
         foreach ($categories as $category){

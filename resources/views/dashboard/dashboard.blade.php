@@ -6,6 +6,7 @@
                     <img src="{{ asset('img/no-icon.png') }}" alt="">
                 </div>
                 <p class="card-username">{{ $user->user_name }}</p>
+                <p class="card-identification">本人確認: {!! $pi->identification ? '✅' : '<a href="/">✖ 未認証</a>' !!} </p>
             </div>
             <div class="card-menu">
                 <div class="card-menu-top">

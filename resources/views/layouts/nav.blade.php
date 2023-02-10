@@ -27,13 +27,40 @@
         <!--/search-->
         <!--/left-->
         <!--nav-->
+        <ul class="menu">
+            <li class="menu__single"><img src={{ asset("img/cart.png") }} alt="cart"></li>
+            <li class="menu__single"><img src={{ asset("img/auction.png") }} alt="info"></li>
+            <li class="menu__single"><img src={{ asset("img/heart.png") }} alt="auction"></li>
+            <li class="menu__single"><img src={{ asset("img/bell.png") }} alt="iine"></li>
+            <li class="menu__single">
+                <a href="#" class="init-bottom"><img src={{ asset("img/human.png") }} alt="mypage"></a>
+                <ul class="menu__second-level">
+                    <li><a href="{{ url('dashboard') }}">ダッシュボード</a></li>
+                    <li><form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')"
+                                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form></li>
+                </ul>
+            </li>
+            <!-- 他グローバルナビメニュー省略 -->
+        </ul>
         <nav class="navigation">
             <ul>
-                <li><a href=""><img src={{ asset("img/cart.png") }} alt="cart"></a></li>
-                <li><a href=""><img src={{ asset("img/auction.png") }} alt="info"></a></li>
-                <li><a href=""><img src={{ asset("img/heart.png") }} alt="auction"></a></li>
-                <li><a href=""><img src={{ asset("img/bell.png") }} alt="iine"></a></li>
-                <li><a href="{{ url('login') }}"><img src={{ asset("img/human.png") }} alt="mypage"></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li class="mypage-menu"></li>
+                <ul class="header-dropdown">
+                    <li><a href=""></a></li>
+                    <li>
+
+                    </li>
+                </ul>
             </ul>
         </nav>
         <!--/nav-->

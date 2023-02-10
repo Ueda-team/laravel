@@ -22,7 +22,7 @@
 .search {
     padding: 15px;
 }
-.search_container{
+.search_container {
     position: relative;
     box-sizing: border-box;
     border: 2px solid #4b4b4b;
@@ -32,14 +32,14 @@
     width: 330px;
     overflow: hidden;
 }
-.search_container input[type="text"]{
+.search_container input[type="text"] {
     border: none;
     height: 2.0em;
 }
 .search_container input[type="text"]:focus {
     outline: 0;
 }
-.search_container input[type="submit"]{
+.search_container input[type="submit"] {
     cursor: pointer;
     font-family: FontAwesome, serif;
     background: #4b4b4b;
@@ -55,44 +55,88 @@
 
 
 /*nav*/
-.navigation {
-    width: 60%;
-    display: flex;
-    justify-content: flex-end;
+.menu {
+
+    height: 50px;
+    margin: 0 auto;
 }
-.navigation ul li {
-    display: inline-block;
-    padding: 0 8px;
+
+.menu > li {
+    float: left;
+    padding-left: 2rem;
+    height: 50px;
+    line-height: 50px;
 }
-.navigation ul li a img {
+
+.menu > li a {
+    display: block;
+    color: black;
+}
+
+.menu > li a:hover {
+    color: #999;
+}
+
+ul.menu__second-level {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+}
+
+ul.menu__third-level {
+    visibility: hidden;
+    opacity: 0;
+}
+
+ul.menu__fourth-level {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.menu__second-level li {
+    border-top: 1px solid #111;
+}
+
+.menu__third-level li {
+    border-top: 1px solid #111;
+}
+
+/* floatクリア */
+.menu:before,
+.menu:after {
+    content: " ";
+    display: table;
+}
+
+.menu:after {
+    clear: both;
+}
+
+.menu {
+    *zoom: 1;
+}
+
+.menu__single img {
     width: 40px;
     padding: 20px 8px 8px 8px;
 }
-.navigation li a{
+
+.menu > li.menu__single {
     position: relative;
 }
 
-.navigation li.current a,
-.navigation li a:hover{
-    color:#4b4b4b;
-}
-
-.navigation li a::after {
-    content: '';
+li.menu__single ul.menu__second-level {
     position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: 3px;
-    background:#4b4b4b;
-    /*アニメーションの指定*/
-    transition: all .3s;
-    transform: scale(0, 1);
-    transform-origin: center top;
+    top: 40px;
+    width: 300px;
+    background: #F3F4F6;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
-/*現在地とhoverの設定*/
-.navigation li.current a::after,
-.navigation li a:hover::after {
-    transform: scale(1, 1);
+li.menu__single:hover ul.menu__second-level {
+    top: 50px;
+    visibility: visible;
+    opacity: 1;
 }

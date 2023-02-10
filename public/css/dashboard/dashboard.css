@@ -26,6 +26,10 @@
     font-size: 2em;
 }
 
+.card-identification {
+    text-align: center;
+}
+
 .card-avatar img {
     border-radius: 50%;
 }

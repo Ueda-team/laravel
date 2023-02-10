@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Auction;
 use App\Models\Category;
 use App\Models\Work;
+use App\Models\PersonalInformation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,7 +21,7 @@ class Dashboard extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function index(): Factory|View|Application
     {
-        return view('dashboard.dashboard', ['user' => Auth::user()]);
+        return view('dashboard.dashboard', ['user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
     public function work($id=""): Factory|View|Application
@@ -68,7 +69,7 @@ class Dashboard extends BaseController
 
     public function auction_add(): Factory|View|Application
     {
-        $categories =  Category::all();
+        $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
         foreach ($categories as $category){

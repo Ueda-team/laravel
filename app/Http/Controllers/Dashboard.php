@@ -21,13 +21,13 @@ class Dashboard extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function index(): Factory|View|Application
     {
-        return view('dashboard.dashboard', ['user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        return view('dashboard.dashboard', ['title' => 'ダッシュボード', 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
     public function work($id=""): Factory|View|Application
     {
         $works = Work::where('user_id', Auth::user()->id)->get();
-        return view('dashboard.work', ['works' => $works]);
+        return view('dashboard.work', ['title' => '出品サービス管理', 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
     public function work_add(): Factory|View|Application

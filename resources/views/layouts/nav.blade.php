@@ -1,5 +1,4 @@
 <div class="wrapper width: 100%;">
-    <!--header-->
     <header class="header width: 100%;
     display: flex;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);">
@@ -12,9 +11,6 @@
                 <img class=" width: 130px;
     margin: 0 10px;" src={{ asset("img/logo.png" ) }} alt="ALTE">
             </a>
-
-
-            <!--search-->
             <div class="search">
                 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -23,10 +19,7 @@
                     <input type="submit" value="&#xf002">
                 </form>
             </div>
-        </div><!--/logo-->
-        <!--/search-->
-        <!--/left-->
-        <!--nav-->
+        </div>
         <ul class="menu">
             <li class="menu__single"><img src={{ asset("img/cart.png") }} alt="cart"></li>
             <li class="menu__single"><img src={{ asset("img/auction.png") }} alt="info"></li>
@@ -44,36 +37,6 @@
                     </li>
                 </ul>
             </li>
-            <!-- 他グローバルナビメニュー省略 -->
         </ul>
-        <nav class="navigation">
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li class="mypage-menu"></li>
-                <ul class="header-dropdown">
-                    <li><a href=""></a></li>
-                    <li>
-
-                    </li>
-                </ul>
-            </ul>
-        </nav>
-        <!--/nav-->
     </header>
-    <!--header-->
-    <!--header2-->
-    <header class="header2">
-        <!--left-->
-        <div class="category-left">
-        </div>
-        <!--/left-->
-        <!--right-->
-        <div class="category-right">
-        </div>
-        <!--/right-->
-    </header>
-    <!--/header2-->
-</div><!--/wrapper-->
+</div>

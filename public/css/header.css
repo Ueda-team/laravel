@@ -8,7 +8,7 @@
 .logo {
     width: 40%;
     display: flex;
-    margin: auto;
+    margin: auto 0 auto 3%;
 }
 .logo a img {
     width: 135px;
@@ -56,15 +56,12 @@
 
 /*nav*/
 .menu {
-
-    height: 50px;
-    margin: 0 auto;
+    margin: auto 3% auto auto;
 }
 
 .menu > li {
     float: left;
-    padding-left: 2rem;
-    height: 50px;
+    padding-right: 2rem;
     line-height: 50px;
 }
 
@@ -81,24 +78,11 @@ ul.menu__second-level {
     visibility: hidden;
     opacity: 0;
     z-index: 1;
+    right: 1%;
 }
 
 ul.menu__second-level a {
     padding: 0.5rem 0 0 1rem;
-}
-
-ul.menu__third-level {
-    visibility: hidden;
-    opacity: 0;
-}
-
-ul.menu__fourth-level {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.menu__third-level li {
-    border-top: 1px solid #111;
 }
 
 /* floatクリア */
@@ -118,7 +102,7 @@ ul.menu__fourth-level {
 
 .menu__single img {
     width: 40px;
-    padding: 20px 8px 8px 8px;
+    padding: 8px;
 }
 
 .menu > li.menu__single {
@@ -128,7 +112,6 @@ ul.menu__fourth-level {
 li.menu__single ul.menu__second-level {
     position: absolute;
     top: 40px;
-    /*right: 0.1rem;*/
     width: 10rem;
     background: #F3F4F6;
     border-radius: 5px;
@@ -144,4 +127,44 @@ li.menu__single:hover ul.menu__second-level {
     top: 50px;
     visibility: visible;
     opacity: 1;
+}
+
+.navigation {
+    width: auto;
+}
+
+.login-button {
+    display: flex;
+    margin: auto 3% auto auto;
+}
+
+.login-button ul {
+
+}
+
+.login-button :is(h1, h2, h3) {
+    size: 10px;
+}
+
+.login-button li {
+    margin-left: 0.5rem;
+}
+
+.login-button a {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 9rem;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    border: 2px solid #27acd9;
+    border-radius: 0.25rem;
+    color: #27acd9;
+    transition: 0.5s;
+}
+
+.login-button a:hover {
+    color: #fff;
+    background: #27acd9;
 }

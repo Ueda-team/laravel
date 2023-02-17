@@ -302,7 +302,7 @@ main {
 
 /*work==============================================*/
 .work_wrap{
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 
 }
@@ -325,11 +325,15 @@ main {
     border-top-width: 1px;
     border-bottom-color: #000;
     border-bottom-width: 1px;
+    margin: 50px 20px;
 }
 .work_table{
-    margin: 30px 50px;
+    margin: 50px 20px;
     font-size: 20px;
 
+}
+.work_table tbody{
+    margin: 50px 20px;
 }
 .work_table tr{
     border-top-width: 15px;

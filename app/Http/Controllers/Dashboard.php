@@ -62,7 +62,7 @@ class Dashboard extends BaseController
             'user_id' => Auth::user()->id,
             'auction_id' => 0,
             'buy_id' => 0,
-            'types'
+            'types' => 0
         ]);
         return view('dashboard.work-ok', ['work' => $model]);
     }

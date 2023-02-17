@@ -32,6 +32,7 @@ class Work extends Authenticatable
         'user_id',
         'auction_id',
         'buy_id',
+        'types'
     ];
 
     /**

@@ -7,7 +7,7 @@
                 <th class="workpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>
                 <td>
                     {{ Form::select('category', ['自分の作品を売る', '仕事を募集する'], 0) }}
-                    {{ Form::select('category', $categories, 0) }}
+                    {{ Form::select('category', ['イラスト','漫画','デザイン','Webサイト制作','Webデザイン','動画・アニメーション','IT・プログラミング',], 0) }}
                 </td>
             </tr>
             <tr>
@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <th class="workpost_th">{!! Form::label('price', '価格') !!}</th>
-                <td>{{ Form::text('price', null) }}</td>
+                <td>{{ Form::number('price', null,) }}</td>
             </tr>
             <tr>
                 <th class="workpost_th">{!! Form::label('tag', 'タグ') !!}</th>

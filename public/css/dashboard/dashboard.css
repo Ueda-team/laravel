@@ -2,6 +2,9 @@
 @import url("auction_post.css");
 @import url("workwrap.css");
 
+.main{
+    width: 100%;
+}
 .dashboard-wrapper {
     margin: 2% 7%;
     display: flex;

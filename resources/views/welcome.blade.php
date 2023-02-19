@@ -46,15 +46,32 @@
                 <div><img src="{{ asset('img/top-slide/slide-3.webp') }}"></div>
             </div>
             <div class="main">
-                <div class="info1">
-                    <h2>カテゴリーから探す</h2>
-                    <?php foreach ($categories as $category): ?>
-                        <h4><a href="#">{{$category->name}}</a></h4>
-                    <?php endforeach;?>
+                <div class="top_main">
+                    <div class="info1">
+                        <h2>カテゴリーから探す</h2>
+                        <ul>
+                            <li><a>イラスト</a></li>
+                            <li><a>漫画</a></li>
+                            <li><a>デザイン</a></li>
+                            <li><a>Webサイト制作</a></li>
+                            <li><a>Webデザイン</a></li>
+                            <li><a>動画・アニメーション</a></li>
+                            <li><a>IT・プログラミング</a></li>
+                        </ul>
+                    </div>
+                    <div class="ranking">
+                        <h2>カテゴリー別ランキング</h2>
+                        <div class="ranking_categoly1">
+                            <div class="category1_first">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="outline"></p>
+                                <p class="worker"></p>
+                                <p class="fee"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ranking">
-                    <h2>カテゴリー別ランキング</h2>
-                </div>
+
                 <div>
 
                 </div>

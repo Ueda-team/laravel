@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="workpost_wrapper">
         <h2 class="workpost_title">サービスの出品</h2>
-        {{ Form::open() }}
+        {{ Form::open([ 'files' => true]) }}
         <table class="workpost_table">
             <tr>
                 <th class="workpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>

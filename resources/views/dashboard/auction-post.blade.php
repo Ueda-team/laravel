@@ -7,7 +7,7 @@
                 <th class="auctionpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>
                 <td>
                     {{ Form::select('category', ['自分の作品を売る', '仕事を募集する'], 0) }}
-                    {{ Form::select('category', $categories, 0) }}
+                    {{ Form::select('category', ['イラスト','漫画','デザイン','Webサイト制作','Webデザイン','動画・アニメーション','IT・プログラミング',], 0) }}
                 </td>
             </tr>
             <tr>
@@ -20,11 +20,11 @@
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('start_price', '開始価格') !!}</th>
-                <td>{{ Form::text('start_price', null) }}</td>
+                <td>{{ Form::number('start_price', null) }}</td>
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('max_price', '即決価格') !!}</th>
-                <td>{{ Form::text('max_price', null) }}</td>
+                <td>{{ Form::number('max_price', null) }}</td>
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('tag', 'タグ') !!}</th>

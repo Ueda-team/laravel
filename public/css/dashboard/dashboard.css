@@ -17,6 +17,7 @@
     width: 20%;
     border-radius: 1rem 1rem 1rem 1rem;
     background-color: #F3F4F6;
+    max-height: 600px;
 }
 
 .card-avatar {
@@ -63,4 +64,88 @@ a:hover {
     border-left-width: 10px;
     border-color: #4b4b4b;
 }
-
+.article_wrapper{
+    width: 80%;
+    margin-left: 20px;
+}
+.dashboard_news{
+    margin-top: 50px;
+    margin-left: 10px;
+    font-size: 30px;
+    border-bottom-width: 3px;
+    border-color: #4b4b4b;
+    font-weight: bold;
+}
+.news p{
+    font-size: 20px;
+    margin: 10px 15px;
+}
+.dashboard_project{
+    margin-top: 50px;
+    margin-left: 10px;
+    font-size: 30px;
+    border-bottom-width: 3px;
+    border-color: #4b4b4b;
+    font-weight: bold;
+}
+.projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 15px 30px;
+}
+.talk_p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 0 8px 0;
+}
+.est_p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 0 8px 0;
+}
+.talkroom{
+    display: flex;
+    flex-direction: row;
+}
+.estimate{
+    display: flex;
+    flex-direction: row;
+}
+.message1{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px 0 0;
+    padding-right: 30px;
+    border-right-width: 1px;
+}
+.message2{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.message3{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px 0 0;
+    padding-right: 30px;
+    border-right-width: 1px;
+}
+.message4{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 300px 0 0;
+}
+.number{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin: 0 0 0 15px;
+}
+.number .messagenumber{
+    font-size: 40px;
+    font-weight: bold;
+}

@@ -61,12 +61,58 @@
                     </div>
                     <div class="ranking">
                         <h2>カテゴリー別ランキング</h2>
+                        <h2 class="category1">イラスト</h2>
                         <div class="ranking_categoly1">
                             <div class="category1_first">
                                 <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="outline"></p>
-                                <p class="worker"></p>
-                                <p class="fee"></p>
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category1_second">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category1_third">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="category2">漫画</h2>
+                        <div class="ranking_categoly2">
+                            <div class="category2_first">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category2_second">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category2_third">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
                             </div>
                         </div>
                     </div>

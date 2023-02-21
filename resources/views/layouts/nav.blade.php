@@ -29,6 +29,7 @@
                 <a href="#" class="init-bottom"><img src={{ asset("img/human.png") }} alt="mypage"></a>
                 <ul class="menu__second-level">
                     <li><a href="{{ url('dashboard') }}">ダッシュボード</a></li>
+                    <li><a href="{{ url('dm') }}">メッセージ</a></li>
                     <li><form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <a href="{{route('logout')}}" onclick="event.preventDefault();

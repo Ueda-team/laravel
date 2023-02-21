@@ -1,0 +1,7 @@
+.dm-wrapper {
+    margin: 2% 7%;
+    height: 88%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}

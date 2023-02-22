@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dm;
 
+use App\Models\Dm;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -11,12 +12,12 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
-class Dm extends BaseController
+class DmIndex extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     Public function index(): Factory|View|Application
     {
-        $dms =
-        return view('dm.index', ['user' => Auth::user()]);
+        $dm = Dm::where('user_id', Auth::user()->id)->get();
+        return view('dm.index', ['user' => Auth::user(), 'dm' => $dm]);
     }
 }

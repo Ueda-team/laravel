@@ -1,8 +1,12 @@
 <x-app-layout>
     <div class="dm-wrapper">
         <div>
-            <h2>メッセージ</h2>
-            <p>メッセージがありません</p>
+            @if(count($dm) === 0)
+                <h2>メッセージ</h2>
+                <p>メッセージがありません</p>
+            @else
+                {{ $dm }}
+            @endif
         </div>
     </div>
 </x-app-layout>

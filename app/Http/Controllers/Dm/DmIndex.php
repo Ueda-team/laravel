@@ -16,6 +16,7 @@ class Dm extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     Public function index(): Factory|View|Application
     {
+        $dms =
         return view('dm.index', ['user' => Auth::user()]);
     }
 }

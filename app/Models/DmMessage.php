@@ -7,12 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-/**
- * @method static where(string $string, mixed $id)
- */
-class Dm extends Authenticatable
+class DmMessage extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $guarded = ['id'];//追記
+    protected $table = 'chat_messages';
 
     /**
      * The attributes that are mass assignable.
@@ -20,9 +20,7 @@ class Dm extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'room_id',
-        'user_id',
-        'admin'
+        'name',
     ];
 
     /**

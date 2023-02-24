@@ -3,6 +3,7 @@
 use App\Http\Controllers\Home\Home;
 use App\Http\Controllers\User\UserIndex;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Home::class, 'index'])->name('home');
 
 Route::get('/user/work-all', [UserIndex::class, 'work_all']);
-
-
-
 
 require __DIR__.'/auth.php';
 require __DIR__.'/user.php';

@@ -22,10 +22,7 @@ class UserIndex extends Controller
         if($user){
             return view('user.user', ['user' => $user]);
         }else{
-            if(Auth::check()){
-                return view('user.user', ['user' => Auth::user()]);
-            }
-            return view('auth.login');
+            return view('user.list');
         }
     }
 }

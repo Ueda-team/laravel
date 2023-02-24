@@ -8,6 +8,7 @@
             <?php
             foreach ($works as $work){
                 echo "<div class='tablewrap'>";
+                echo "<img class='work_image' src='/img/sampleimage.png'>";
                 echo "<table class='work_table'><tr><td>作品名</td><td>" . $work['title'] . "</td>";
                 echo "<td>概要</td><td>". $work['outline'] . "</td></tr>";
                 echo "<tr><td>プレビュー</td><td>" . $work['preview'] . "</td>";

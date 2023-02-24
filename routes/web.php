@@ -24,11 +24,3 @@ require __DIR__.'/auth.php';
 require __DIR__.'/user.php';
 require __DIR__.'/dashboard.php';
 require __DIR__.'/dm.php';
-
-Route::get('cloudflare_r2_upload', function(){
-    $filename = 'logo.png';
-    $path = storage_path('app/images/'. $filename);
-    $content = file_get_contents($path);
-    $result = Storage::disk('r2_avatar')->put($filename, $content); // 👈 ここでアップロード
-    dd($result);
-});

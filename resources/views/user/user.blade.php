@@ -1,19 +1,23 @@
 <x-app-layout>
-    <div class="user_wrapper">
-        <div class="profile_wrapper">
-            <div class="profile_left">
-                <img src={{ asset("img/no-icon.png") }}>
-            </div>
-            <div class="profile_right">
-                <h2>名前: {{$user->user_name}}</h2>
-                <p>ユーザーID: {{$user->user_id}}</p>
-                <p>メールアドレス: {{$user->email}}</p>
-                <p>認証: {{$user->email_verified_at}}</p>
-                <p>アカウント作成日: {{$user->created_at}}</p>
-                <p>アカウント更新日: {{$user->updated_at}}</p>
-            </div>
+    <div class="profile">
+        <div class="profile-header">
+            <img src="{!! $card !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-card.png') }}'">
         </div>
-        <div class="user_detail">
+        <div class="profile-main">
+            <div class="profile-main-header">
+                <div class="profile-main-header-description">
+                    <div class="profile-main-description-header-avatar">
+                        <img src="{!! $avatar !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}'">
+                    </div>
+                    <div class="profile-main-header-description-text">
+                        <p class="profile-main-header-description-name">{{ $user->user_name }}</p>
+                        <p class="profile-main-header-description-id">{{ '@'. $user->user_id }}</p>
+                    </div>
+                </div>
+                <div class="profile-main-header-follow">
+                    <a>Follow</a>
+                </div>
+            </div>
 
         </div>
     </div>

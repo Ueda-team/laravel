@@ -46,15 +46,78 @@
                 <div><img src="{{ asset('img/top-slide/slide-3.webp') }}"></div>
             </div>
             <div class="main">
-                <div class="info1">
-                    <h2>カテゴリーから探す</h2>
-                    <?php foreach ($categories as $category): ?>
-                        <h4><a href="#">{{$category->name}}</a></h4>
-                    <?php endforeach;?>
+                <div class="top_main">
+                    <div class="info1">
+                        <h2>カテゴリーから探す</h2>
+                        <ul>
+                            <li><a>イラスト</a></li>
+                            <li><a>漫画</a></li>
+                            <li><a>デザイン</a></li>
+                            <li><a>Webサイト制作</a></li>
+                            <li><a>Webデザイン</a></li>
+                            <li><a>動画・アニメーション</a></li>
+                            <li><a>IT・プログラミング</a></li>
+                        </ul>
+                    </div>
+                    <div class="ranking">
+                        <h2>カテゴリー別ランキング</h2>
+                        <h2 class="category1">イラスト</h2>
+                        <div class="ranking_categoly1">
+                            <div class="category1_first">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category1_second">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category1_third">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="category2">漫画</h2>
+                        <div class="ranking_categoly2">
+                            <div class="category2_first">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category2_second">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                            <div class="category2_third">
+                                <img src="{{asset('img/sampleimage.png')}}">
+                                <p class="ranking_outline">概要</p>
+                                <div class="category_row">
+                                    <p class="ranking_worker">制作者</p>
+                                    <p class="ranking_fee">金額</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ranking">
-                    <h2>カテゴリー別ランキング</h2>
-                </div>
+
                 <div>
 
                 </div>

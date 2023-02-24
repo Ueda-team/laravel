@@ -5,8 +5,6 @@
 
 @import url("welcome.css");
 @import url("dashboard/main.css");
-@import url("dm/main.css");
-@import url("user/main.css");
 
 
 html {
@@ -14,7 +12,6 @@ html {
 }
 
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -25,6 +22,5 @@ body {
 }
 
 main {
-    height: 100%;
     flex: 1;
 }

@@ -1,0 +1,30 @@
+.user_wrapper{
+    margin: 2% 7%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.profile_wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 50px 120px;
+}
+.profile_wrapper .profile_left img{
+    width: 180px;
+    border-radius: 100px;
+}
+.profile_right{
+    width: 80%;
+    margin: 0 120px 0 70px;
+    font-size: 18px;
+}
+.profile_right h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 70px 0 35px;
+    border-bottom-width: 1px;
+}
+.profile_right p{
+    margin: 10px 0;
+}

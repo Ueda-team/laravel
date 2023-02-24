@@ -1,51 +1,30 @@
-.profile {
-    margin: 0 10rem;
+.user_wrapper{
+    margin: 2% 7%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
-
-.profile-header {
-    margin: 0 auto;
-}
-
-.profile-header img{
-    width: 1500px;
-}
-
-.profile-main-header {
+.profile_wrapper{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    margin: 50px 0 50px 120px;
 }
-
-.profile-main-description-header-avatar {
-    width: 10em;
-    height: 10em;
-    margin-left: 20px;
+.profile_wrapper .profile_left img{
+    width: 180px;
+    border-radius: 100px;
 }
-
-.profile-main-description-header-avatar img {
-    margin-top: -3rem;
-    border-radius: 50%;
-    border: 5px solid white;
+.profile_right{
+    width: 80%;
+    margin: 0 120px 0 70px;
+    font-size: 18px;
 }
-
-.profile-main-header-follow {
-    margin-right: 10%;
-}
-
-.profile-main-header-follow p {
-    margin: 0 auto;
-}
-
-.profile-main-header-description {
-    display: flex;
-}
-
-.profile-main-header-description-name {
+.profile_right h2{
+    font-size: 40px;
     font-weight: bold;
-    font-size: 2.5em;
+    margin: 70px 0 35px;
+    border-bottom-width: 1px;
 }
-
-.profile-main-header-description-text {
-    margin-top: 1rem;
-    margin-left: 2rem;
+.profile_right p{
+    margin: 10px 0;
 }

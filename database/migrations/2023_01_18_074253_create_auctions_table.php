@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('start_price');
             $table->integer('max_price');
-            $table->timestampTz('start_date');
-            $table->timestampTz('end_date');
+            $table->datetime('start_date')->default('1000-01-01 00:00:00');
+            $table->datetime('end_date')->default('1000-01-01 00:00:00');
             $table->boolean('status');
             $table->timestamps();
         });

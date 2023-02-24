@@ -1,5 +1,6 @@
 @import url("work_post.css");
 @import url("auction_post.css");
+@import url("workwrap.css");
 
 .dashboard-wrapper {
     margin: 2% 7%;
@@ -52,6 +53,11 @@ a:hover {
 }
 
 .dashboard-title {
-    padding: 1.25rem;
-    font-size: 1.75em;
+    margin: 50px 0;
+    padding: 7px 18px;
+    font-size: 2em;
+    font-weight: bold;
+    border-left-width: 10px;
+    border-color: #4b4b4b;
 }
+

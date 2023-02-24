@@ -1,0 +1,27 @@
+.work_link{
+    border: 1px solid;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.work_link:hover{
+    color: #27acd9;
+}
+.work_p{
+    margin-top: 70px;
+    margin-left: 10px;
+    font-size: 30px;
+    border-bottom-width: 3px;
+    border-color: #4b4b4b;
+}
+
+.work_wrap{
+    width: 100%;
+    margin: 10px 20px;
+}
+.work_wrap a{
+    margin: 10px 10px;
+}
+.work_wrap .tablewrap{
+    margin: 30px 10px 40px;
+}

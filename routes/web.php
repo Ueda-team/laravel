@@ -17,12 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 Route::get('/user/work-all', [UserIndex::class, 'work_all']);
 
 require __DIR__.'/auth.php';
-
 require __DIR__.'/user.php';
+require __DIR__.'/dashboard.php';
+require __DIR__.'/dm.php';

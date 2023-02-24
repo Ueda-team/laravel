@@ -1,5 +1,4 @@
 <div class="wrapper width: 100%;">
-    <!--header-->
     <header class="header width: 100%;
     display: flex;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);">
@@ -12,9 +11,6 @@
                 <img class=" width: 130px;
     margin: 0 10px;" src={{ asset("img/logo.png" ) }} alt="ALTE">
             </a>
-
-
-            <!--search-->
             <div class="search">
                 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -23,32 +19,26 @@
                     <input type="submit" value="&#xf002">
                 </form>
             </div>
-        </div><!--/logo-->
-        <!--/search-->
-        <!--/left-->
-        <!--nav-->
-        <nav class="navigation">
-            <ul>
-                <li><a href=""><img src={{ asset("img/cart.png") }} alt="cart"></a></li>
-                <li><a href=""><img src={{ asset("img/auction.png") }} alt="info"></a></li>
-                <li><a href=""><img src={{ asset("img/heart.png") }} alt="auction"></a></li>
-                <li><a href=""><img src={{ asset("img/bell.png") }} alt="iine"></a></li>
-                <li><a href="{{ url('login') }}"><img src={{ asset("img/human.png") }} alt="mypage"></a></li>
-            </ul>
-        </nav>
-        <!--/nav-->
-    </header>
-    <!--header-->
-    <!--header2-->
-    <header class="header2">
-        <!--left-->
-        <div class="category-left">
         </div>
-        <!--/left-->
-        <!--right-->
-        <div class="category-right">
-        </div>
-        <!--/right-->
+        <ul class="menu">
+            <li class="menu__single"><img src={{ asset("img/cart.png") }} alt="cart"></li>
+            <li class="menu__single"><img src={{ asset("img/auction.png") }} alt="info"></li>
+            <li class="menu__single"><img src={{ asset("img/heart.png") }} alt="auction"></li>
+            <li class="menu__single"><img src={{ asset("img/bell.png") }} alt="iine"></li>
+            <li class="menu__single">
+                <a href="#" class="init-bottom"><img src={{ asset("img/human.png") }} alt="mypage"></a>
+                <ul class="menu__second-level">
+                    <li><a href="{{ url('/users/' .  Auth::user()->user_id) }}">プロフィール</a></li>
+                    <li><a href="{{ url('dashboard') }}">ダッシュボード</a></li>
+                    <li><a href="{{ url('dm') }}">メッセージ</a></li>
+                    <li><form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                            this.closest('form').submit();">{{ __('Log Out') }}</a>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </header>
-    <!--/header2-->
-</div><!--/wrapper-->
+</div>

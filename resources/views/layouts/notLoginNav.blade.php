@@ -20,11 +20,10 @@
                 </form>
             </div>
         </div>
-        <nav class="navigation">
-            <ul>
-                <li><a href="{{ url('login') }}">ログイン</a></li>
-                <li><a href="{{ url('register') }}">会員登録</a></li>
-
+        <nav class="menu">
+            <ul class="login-button">
+                <li><a href="{{ url('login') }}" >ログイン</a></li>
+                <li><a href="{{ url('register') }}" class="">会員登録</a></li>
             </ul>
         </nav>
     </header>

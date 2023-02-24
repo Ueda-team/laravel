@@ -25,7 +25,7 @@ class Dashboard extends BaseController
     {
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
-        return view('dashboard.dashboard', ['icon' => $icon, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
     public function work($id=""): Factory|View|Application

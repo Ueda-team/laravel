@@ -5,7 +5,7 @@
                 @if(!$user->avatar)
                     <img src="{{ asset('img/no-icon.png') }}" alt="">
                 @else
-                    <img src="{!! $icon !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                    <img src="{!! $avatar !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
                 @endif
             </div>
             <p class="card-username">{{ $user->user_name }}</p>

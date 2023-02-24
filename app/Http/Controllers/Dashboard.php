@@ -30,7 +30,7 @@ class Dashboard extends BaseController
 
     public function work($id=""): Factory|View|Application
     {
-        $works = Work::where('user_id', Auth::user()->id)->get();
+        $works = Work::where('user_id', Auth::user()->id)->paginate(5);
         return view('dashboard.work', ['title' => '出品サービス管理', 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
@@ -47,6 +47,12 @@ class Dashboard extends BaseController
 
     public function work_post(Request $request): Application|Factory|View
     {
+        // アップロードされたファイルの取得
+        $image = $request->file('file');
+        // ファイルの保存とパスの取得
+        $path = isset($image) ? $image->store('items', 'public') : '';
+
+
         $title = $request['title'];
         $outline = $request['outline'];
         $price = $request['price'];
@@ -62,7 +68,7 @@ class Dashboard extends BaseController
             'file' => $file,
             'category_id' => $category,
             'preview' => 0,
-            'url' => '',
+            'url' => $path,
             'user_id' => Auth::user()->id,
             'auction_id' => 0,
             'buy_id' => 0,
@@ -119,6 +125,7 @@ class Dashboard extends BaseController
     public function work_all(): Factory|View|Application
     {
         $works = Work::get();
-        return view('dashboard.work-all', ['works' => $works]);
+        $page = Work::paginate(5);
+        return view('dashboard.work', ['works' => $works, 'page' => $page]);
     }
 }

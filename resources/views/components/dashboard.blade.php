@@ -17,6 +17,7 @@
             </div>
             <div class="card-menu-list">
                 <ul>
+                    <li><a href="{{ url('users/' .  Auth::user()->user_id) }}">プロフィール</a></li>
                     <li><a href="{{ route('dashboard') }}">ダッシュボード</a></li>
                     <li><a href="{{ route('dashboard-work') }}">出品管理</a></li>
                     <li><a href="{{ route('dm') }}">メッセージ</a></li>

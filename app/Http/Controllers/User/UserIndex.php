@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Lib\R2;
 use App\Models\User;
 use App\Models\PersonalInformation;
 use App\Models\Work;
@@ -20,12 +21,11 @@ class UserIndex extends Controller
     {
         $user = User::where('user_id', $id)->first();
         if($user){
-            return view('user.user', ['user' => $user]);
+            $card = R2::card_get($user->card);
+            $avatar = R2::avatar_get($user->avatar);
+            return view('user.user', ['user' => $user, 'card' => $card, 'avatar' => $avatar]);
         }else{
-            if(Auth::check()){
-                return view('user.user', ['user' => Auth::user()]);
-            }
-            return view('auth.login');
+            return view('user.list');
         }
     }
 }

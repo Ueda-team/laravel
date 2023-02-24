@@ -1,0 +1,51 @@
+.profile {
+    margin: 0 10rem;
+}
+
+.profile-header {
+    margin: 0 auto;
+}
+
+.profile-header img{
+    width: 1500px;
+}
+
+.profile-main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-main-description-header-avatar {
+    width: 10em;
+    height: 10em;
+    margin-left: 20px;
+}
+
+.profile-main-description-header-avatar img {
+    margin-top: -3rem;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.profile-main-header-follow {
+    margin-right: 10%;
+}
+
+.profile-main-header-follow p {
+    margin: 0 auto;
+}
+
+.profile-main-header-description {
+    display: flex;
+}
+
+.profile-main-header-description-name {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.profile-main-header-description-text {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}

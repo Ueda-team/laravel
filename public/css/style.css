@@ -6,6 +6,7 @@
 @import url("welcome.css");
 @import url("dashboard/main.css");
 @import url("dm/main.css");
+@import url("user/main.css");
 
 html {
     height: 100%;

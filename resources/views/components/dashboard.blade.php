@@ -2,7 +2,11 @@
     <div class="card">
         <div class="card-top">
             <div class="card-avatar">
-                <img src="{{ asset('img/no-icon.png') }}" alt="">
+                @if(!$user->avatar)
+                    <img src="{{ asset('img/no-icon.png') }}" alt="">
+                @else
+                    <img src="{!! $icon !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                @endif
             </div>
             <p class="card-username">{{ $user->user_name }}</p>
             <p class="card-identification">本人確認: {!! $pi->identification ? '✅' : '<a href="/">✖ 未認証</a>' !!} </p>

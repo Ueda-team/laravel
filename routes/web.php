@@ -3,6 +3,7 @@
 use App\Http\Controllers\Home\Home;
 use App\Http\Controllers\User\UserIndex;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------

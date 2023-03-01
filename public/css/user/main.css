@@ -19,21 +19,28 @@
 .profile-main-description-header-avatar {
     width: 10em;
     height: 10em;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .profile-main-description-header-avatar img {
+    width: 10em;
+    height: 10em;
     margin-top: -3rem;
     border-radius: 50%;
     border: 5px solid white;
 }
 
 .profile-main-header-follow {
-    margin-right: 10%;
+    margin-right: 5%;
+    margin-top: 1.5rem;
+    cursor: pointer;
 }
 
-.profile-main-header-follow p {
-    margin: 0 auto;
+.profile-main-header-follow a {
+    padding: 0.25rem 1rem;
+    font-size: 1.5em;
+    border: 1px solid #4B4B4B;
+    border-radius: 30px;
 }
 
 .profile-main-header-description {
@@ -48,4 +55,41 @@
 .profile-main-header-description-text {
     margin-top: 1rem;
     margin-left: 2rem;
+}
+
+.profile-main-body-markdown {
+    margin-bottom: 3rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    font-size: inherit;
+}
+
+.profile-main-work {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.profile-main-work-1 {
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 2rem;
+    padding: 0.25rem;
+    width: 200px;
+}
+
+.profile-main-work-1-description p {
+    padding-left: 0.5rem;
+}
+
+.profile-main-work-1-description-title {
+    font-size: 20px;
+}
+
+.profile-main-work-1-description-price, profile-main-work-1-description-achievement {
+    font-size: 14px;
+}
+
+.profile-main-work-1-image {
+    margin: 0.5rem;
 }

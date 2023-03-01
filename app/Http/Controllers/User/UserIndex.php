@@ -21,7 +21,7 @@ class UserIndex extends Controller
     {
         $user = User::where('user_id', $id)->first();
         if($user){
-            $card = R2::card_get($user->card);
+            $card = empty($user->card) ? '' : R2::card_get($user->card);
             $avatar = R2::avatar_get($user->avatar);
             return view('user.user', ['user' => $user, 'card' => $card, 'avatar' => $avatar]);
         }else{

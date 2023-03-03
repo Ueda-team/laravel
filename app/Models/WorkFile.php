@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Lib\R2;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * @method static where(string $string, mixed $id)
  */
-class User extends Authenticatable
+class WorkFile extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -22,22 +20,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
-        'user_name',
-        'email',
-        'password',
-        'avatar',
-        'card'
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
+        'work_id',
+        'name'
     ];
 
     /**
@@ -46,6 +30,6 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'created_at' => 'datetime',
     ];
 }

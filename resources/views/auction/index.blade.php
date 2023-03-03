@@ -18,8 +18,8 @@
             </div>
             <div class="auction-sub-body">
                 <div class="auction-sub-body-flex">
-                    <p>入札<span>{{ $count }}</span> 件</p>
-                    <p>残り<span>1</span> 日</p>
+                    <p>入札 <span>{{ $count }}</span> 件</p>
+                    <p>残り <span>1</span> 日</p>
                 </div>
 {{--                <p>終了予定時刻<span></span></p>--}}
             </div>

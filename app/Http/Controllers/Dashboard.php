@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Auction;
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Work;
 use App\Models\PersonalInformation;
+use App\Models\WorkFile;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\Lib\R2;
+use Illuminate\Support\Str;
 
 
 class Dashboard extends BaseController
@@ -30,7 +33,7 @@ class Dashboard extends BaseController
 
     public function work($id=""): Factory|View|Application
     {
-        $works = Work::where('user_id', Auth::user()->id)->paginate(5);
+        $works = Work::where('user_id', Auth::user()->id)->latest()->paginate(5);
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
         return view('dashboard.work', ['title' => '出品サービス管理', 'avatar' => $avatar, 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
@@ -49,12 +52,6 @@ class Dashboard extends BaseController
 
     public function work_post(Request $request): Application|Factory|View
     {
-        // アップロードされたファイルの取得
-        $image = $request->file('file');
-        // ファイルの保存とパスの取得
-        $path = isset($image) ? $image->store('items', 'public') : '';
-
-
         $title = $request['title'];
         $outline = $request['outline'];
         $price = $request['price'];
@@ -67,15 +64,28 @@ class Dashboard extends BaseController
             'outline' => $outline,
             'price' => $price,
             'tag' => $tag,
-            'file' => $file,
             'category_id' => $category,
             'preview' => 0,
-            'url' => $path,
+            'url' => '',
             'user_id' => Auth::user()->id,
             'auction_id' => 0,
             'buy_id' => 0,
             'types' => 0
         ]);
+
+        //画像の保存
+        do {
+            $ran_id = $model->id . Str::random(7);
+        } while (R2::work_exists($ran_id));
+        $image = $request->file('file');
+        $path = isset($image) && R2::work_put($image, $ran_id);
+        if($path){
+            $workFile = new WorkFile();
+            $workFile->create([
+                'work_id' => $model->id,
+                'name' => $ran_id
+            ]);
+        }
         return view('dashboard.work-ok', ['work' => $model]);
     }
 

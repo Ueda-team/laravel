@@ -16,25 +16,31 @@ class AuctionIndex extends Controller
 {
     public function index($id=""): Factory|View|Application
     {
-        $auction = Auction::where('id', $id)->first();
-        $work = Work::where('auction_id', $auction->id)->first();
-        if($auction && $work){
-            $user = User::where('id', $work->user_id)->first();
-            $count = Auction_buy::count();
-            $bid = (bool)request('bid');
-            if($count === 0){
-                $price = $auction->start_price;
-                $isBid = false;
+        $work = Work::where('id', $id)->first();
+        if($work){
+            $auction = Auction::where('id', $work->auction_id)->first();
+            if($auction){
+                $user = User::where('id', $work->user_id)->first();
+                $count = Auction_buy::where('auction_id', $auction->id)->count();
+                $bid = (bool)request('bid');
+                if($count === 0){
+                    $price = $auction->start_price;
+                    $isBid = false;
+                }else{
+                    $price = Auction_buy::max('price');
+                    $isBid = (bool)Auction_buy::where([
+                        ['user_id', '=', $user->id],
+                        ['auction_id', '=', $auction->id],
+                        ['price', '=', $price],
+                    ])->first();
+                }
+                return view('auction.index', ['auction' => $auction, 'work' => $work, 'count' => $count, 'price' => $price, 'user' => $user, 'isBid' => $isBid, 'bid' => $bid]);
             }else{
-                $price = Auction_buy::max('price');
-                $isBid = (bool)Auction_buy::where([
-                    ['user_id', '=', $user->id],
-                    ['price', '=', $price],
-                ])->first();
+                return view('auction.notFound');
             }
-            return view('auction.index', ['auction' => $auction, 'work' => $work, 'count' => $count, 'price' => $price, 'user' => $user, 'isBid' => $isBid, 'bid' => $bid]);
         }else{
             return view('auction.notFound');
         }
+
     }
 }

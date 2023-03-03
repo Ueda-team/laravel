@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\WorkFile;
+use App\Lib\R2;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,7 +16,6 @@ use Laravel\Sanctum\HasApiTokens;
 class Work extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
 
     /**
      * The attributes that are mass assignable.
@@ -43,4 +43,10 @@ class Work extends Authenticatable
     protected $casts = [
         'verified_at' => 'datetime',
     ];
+
+    public static function getImage($id): string
+    {
+        $workFile = WorkFile::where('work_id', $id)->first();
+        return R2::work_get($workFile->name);
+    }
 }

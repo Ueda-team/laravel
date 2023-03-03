@@ -19,9 +19,12 @@ Route::get('/', [Home::class, 'index'])->name('home');
 
 Route::get('/user/work-all', [UserIndex::class, 'work_all']);
 
+require __DIR__.'/company.php';
+
 require __DIR__.'/auth.php';
 require __DIR__.'/user.php';
 require __DIR__.'/dashboard.php';
 require __DIR__.'/dm.php';
 require __DIR__.'/auction.php';
+require __DIR__.'/work.php';
 require __DIR__.'/search.php';

@@ -61,60 +61,23 @@
                     </div>
                     <div class="ranking">
                         <h2>カテゴリー別ランキング</h2>
-                        <h2 class="category1">イラスト</h2>
-                        <div class="ranking_categoly1">
-                            <div class="category1_first">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
+                        @foreach($lists as $index => $list)
+                            <h2 class="category1">{{ $categories[$index]->name }}</h2>
+                            <div class="ranking_categoly1">
+                                @foreach($list as $work)
+                                    <a href="{{ url('/work/' . $work->id) }}">
+                                        <div class="category1_first">
+                                            <img src={{ $work->getImage($work->id) }} onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                                            <p class="ranking_outline">{{ $work->title }}</p>
+                                            <div class="category_row">
+                                                <p class="ranking_worker">aaa</p>
+                                                <p class="ranking_fee">{{ $work->price }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @endforeach
                             </div>
-                            <div class="category1_second">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
-                            </div>
-                            <div class="category1_third">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="category2">漫画</h2>
-                        <div class="ranking_categoly2">
-                            <div class="category2_first">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
-                            </div>
-                            <div class="category2_second">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
-                            </div>
-                            <div class="category2_third">
-                                <img src="{{asset('img/sampleimage.png')}}">
-                                <p class="ranking_outline">概要</p>
-                                <div class="category_row">
-                                    <p class="ranking_worker">制作者</p>
-                                    <p class="ranking_fee">金額</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 

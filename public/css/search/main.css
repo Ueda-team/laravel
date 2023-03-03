@@ -1,0 +1,135 @@
+.search_wrapper{
+    margin: 2% 7%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.search_category{
+    margin: 0 70px 10px;
+    font-size: 42px;
+    font-weight: bold;
+}
+.contents_illust{
+    width: 100%;
+    margin: 20px 0 20px 110px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.illust_1{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.illust_1 img{
+    width: 100%;
+}
+.illust_1 .illust_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.illust_1 .illust_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+.illust_detail{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 7px;
+}
+.illust_2{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.illust_2 img{
+    width: 100%;
+}
+.illust_2 .illust_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.illust_2 .illust_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+.illust_3{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.illust_3 img{
+    width: 100%;
+}
+.illust_3 .illust_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.illust_3 .illust_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+
+.contents_comic{
+    width: 100%;
+    margin: 20px 0 20px 110px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comic_1{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.comic_1 img{
+    width: 100%;
+}
+.comic_1 .comic_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.comic_1 .comic_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+.comic_detail{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 7px;
+}
+.comic_2{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.comic_2 img{
+    width: 100%;
+}
+.comic_2 .comic_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.comic_2 .comic_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+.comic_3{
+    width: 250px;
+    margin: 10px 50px 10px 0;
+}
+.comic_3 img{
+    width: 100%;
+}
+.comic_3 .comic_title{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 3px 7px 2px;
+}
+.comic_3 .comic_author{
+    font-size: 21px;
+    margin: 2px 7px;
+}
+

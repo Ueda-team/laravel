@@ -50,13 +50,13 @@
                     <div class="info1">
                         <h2>カテゴリーから探す</h2>
                         <ul>
-                            <li><a>イラスト</a></li>
-                            <li><a>漫画</a></li>
-                            <li><a>デザイン</a></li>
-                            <li><a>Webサイト制作</a></li>
-                            <li><a>Webデザイン</a></li>
-                            <li><a>動画・アニメーション</a></li>
-                            <li><a>IT・プログラミング</a></li>
+                            <li><a href="{{ url('search/illust') }}">イラスト</a></li>
+                            <li><a href="{{ url('search/comic') }}">漫画</a></li>
+                            <li><a href="{{ url('search/design') }}">デザイン</a></li>
+                            <li><a href="{{ url('search/webcreate') }}">Webサイト制作</a></li>
+                            <li><a href="{{ url('search/webdesign') }}">Webデザイン</a></li>
+                            <li><a href="{{ url('search/movie') }}">動画・アニメーション</a></li>
+                            <li><a href="{{ url('search/programing') }}">IT・プログラミング</a></li>
                         </ul>
                     </div>
                     <div class="ranking">

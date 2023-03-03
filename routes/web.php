@@ -23,4 +23,4 @@ require __DIR__.'/auth.php';
 require __DIR__.'/user.php';
 require __DIR__.'/dashboard.php';
 require __DIR__.'/dm.php';
-require __DIR__.'/search.php';
+require __DIR__.'/auction.php';

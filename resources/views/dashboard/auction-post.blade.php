@@ -6,7 +6,7 @@
             <tr>
                 <th class="auctionpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>
                 <td>
-                    {{ Form::select('category', ['自分の作品を売る', '仕事を募集する'], 0) }}
+                    {{ Form::select('type', ['自分の作品を売る', '仕事を募集する'], 0) }}
                     {{ Form::select('category', ['イラスト','漫画','デザイン','Webサイト制作','Webデザイン','動画・アニメーション','IT・プログラミング',], 0) }}
                 </td>
             </tr>

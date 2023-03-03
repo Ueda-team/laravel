@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-dashboard :user="$user" :pi="$pi" :title="$title">
+    <x-dashboard :user="$user" :pi="$pi" :title="$title" :avatar="$avatar">
         <div class="work_wrap">
             <a class="work_link" href="{{ route('work_add') }}">マーケットに出す</a>
             <a class="work_link" href="{{ route('auction_add') }}">オークションに出す</a>

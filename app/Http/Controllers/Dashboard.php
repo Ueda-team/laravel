@@ -31,7 +31,9 @@ class Dashboard extends BaseController
     public function work($id=""): Factory|View|Application
     {
         $works = Work::where('user_id', Auth::user()->id)->paginate(5);
-        return view('dashboard.work', ['title' => '出品サービス管理', 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        $user = Auth::user();
+        $avatar = R2::avatar_get($user->avatar);
+        return view('dashboard.work', ['title' => '出品サービス管理', 'avatar' => $avatar, 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
     public function work_add(): Factory|View|Application
@@ -97,6 +99,7 @@ class Dashboard extends BaseController
         $tag = $request['tag'];
         $file = $request['file'];
         $category = $request['category'];
+        $type = $request['type'];
         $auction = new Auction();
         $auctionModel = $auction->create([
             'start_price' => $start_price,
@@ -117,7 +120,8 @@ class Dashboard extends BaseController
             'url' => '',
             'user_id' => Auth::user()->id,
             'auction_id' => $auctionModel->id,
-            'buy_id' => 0
+            'buy_id' => 0,
+            'types' => $type
         ]);
         return view('dashboard.work-ok', ['work' => $model]);
     }

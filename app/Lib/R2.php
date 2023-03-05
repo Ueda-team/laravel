@@ -8,6 +8,7 @@ class R2
 {
     public static function avatar_get($name): String
     {
+        if(!$name) return '';
         $icon = Storage::disk('r2_avatar')->get($name);
         $base64 = base64_encode($icon);
         $mime = "image/webp";
@@ -27,6 +28,7 @@ class R2
 
     public static function card_get($name): String
     {
+        if(!$name) return '';
         $icon = Storage::disk('r2_card')->get($name);
         $base64 = base64_encode($icon);
         $mime = "image/png";
@@ -35,6 +37,7 @@ class R2
 
     public static function work_get($name): string
     {
+        if(!$name) return '';
         $icon = Storage::disk('r2_work')->get($name);
         $base64 = base64_encode($icon);
         $mime = "image/png";

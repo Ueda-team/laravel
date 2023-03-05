@@ -9,8 +9,8 @@ use Illuminate\Contracts\View\View;
 
 class Setting extends Controller
 {
-    public function index(): Factory|View|Application
+    public function index()
     {
-        return view('setting.index');
+        return redirect('setting/account');
     }
 }

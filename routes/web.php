@@ -28,3 +28,4 @@ require __DIR__.'/dm.php';
 require __DIR__.'/auction.php';
 require __DIR__.'/work.php';
 require __DIR__.'/search.php';
+require __DIR__.'/setting.php';

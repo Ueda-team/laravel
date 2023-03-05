@@ -14,11 +14,15 @@ class R2
         return 'data:' . $mime . ';base64,' . $base64;
     }
 
-    public static function avatar_put($filename): bool
+    public static function avatar_put($path, $filename): bool
     {
-        $path = storage_path('app/images/'. $filename);
         $content = file_get_contents($path);
         return Storage::disk('r2_avatar')->put($filename, $content);
+    }
+
+    public static function avatar_exists($name): bool
+    {
+        return Storage::disk('r2_avatar')->exists($name);
     }
 
     public static function card_get($name): String

@@ -48,4 +48,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getAvatar($id): string
+    {
+        $user = User::where('id', $id)->first();
+        return R2::avatar_get($user->avatar);
+    }
 }

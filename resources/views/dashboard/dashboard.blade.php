@@ -3,8 +3,9 @@
             <div class="article_wrapper">
                 <div class="news">
                     <h2 class="dashboard_news">ニュース</h2>
-                    <p>news</p>
-                    <p>news</p>
+                    @foreach($news as $body)
+                        <a href=" {{ url('/news/' . $body->id) }}"><p>{{ $body->title }}</p></a>
+                    @endforeach
                 </div>
                 <div class="myproject">
                     <h2 class="dashboard_project">進行中の案件</h2>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Auction;
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Work;
 use App\Models\PersonalInformation;
 use App\Models\WorkFile;
@@ -55,6 +56,7 @@ class Dashboard extends BaseController
         $outline = $request['outline'];
         $price = $request['price'];
         $tag = $request['tag'];
+        $file = $request['file'];
         $category = $request['category'];
         $work = new Work();
         $model = $work->create([

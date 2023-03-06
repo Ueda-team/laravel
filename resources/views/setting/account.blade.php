@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-setting-list :title="$title">
+        @push('styles')
         <div class="setting-account">
             @if(session('change'))
                 <h3>保存しました</h3>
@@ -26,6 +27,14 @@
                 <h3>ユーザーID変更</h3>
                 {{ Form::open(array('route' => array('setting-account-id-change'))) }}
                 {{ Form::text('userid', $user->user_id) }}
+                {{ Form::submit('保存', ['class' => '', '']) }}
+                {{ Form::close() }}
+            </div>
+            <div class="setting-account-description setting-box">
+                <h3>自己紹介変更</h3>
+                <p>マークダウンに対応しています</p>
+                {{ Form::open(array('route' => array('setting-account-description-change'))) }}
+                {{ Form::textarea('description', $userDescription->description, ['class' => 'block w-full mt-1 rounded-md']) }}
                 {{ Form::submit('保存', ['class' => '', '']) }}
                 {{ Form::close() }}
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\PersonalInformation;
 use App\Models\User;
+use App\Models\UserDescription;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -56,6 +57,11 @@ class RegisteredUserController extends Controller
 
         PersonalInformation::create([
             'user_id' => $user->id
+        ]);
+
+        UserDescription::create([
+            'user_id' => $user->id,
+            'description' => '未記入'
         ]);
 
         event(new Registered($user));

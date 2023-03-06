@@ -4,6 +4,7 @@ namespace App\Http\Controllers\setting;
 
 use App\Http\Controllers\Controller;
 use App\Lib\R2;
+use App\Models\UserDescription;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,7 +17,8 @@ class Account extends Controller
     public function index(): Factory|View|Application
     {
         $user = Auth::user();
-        return view('setting.account', ['title' => 'プロフィール', 'user' => $user]);
+        $userDescription = UserDescription::where('user_id', $user->id)->first();
+        return view('setting.account', ['title' => 'プロフィール', 'user' => $user, 'userDescription' => $userDescription]);
     }
 
     public function avatarChange(Request $request)
@@ -50,6 +52,14 @@ class Account extends Controller
         $user = Auth::user();
         $user->user_id = $request['userid'];
         $user->save();
+        return back()->with('change', true);
+    }
+
+    public function descriptionChange(Request $request)
+    {
+        $userDescription = UserDescription::where('user_id', Auth::user()->id)->first();
+        $userDescription->description = $request['description'];
+        $userDescription->save();
         return back()->with('change', true);
     }
 }

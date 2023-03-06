@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    @stack('styles')
+
 </head>
 <body class="font-sans antialiased bg-gray-100">
     @if(Auth::check())
@@ -26,5 +28,6 @@
         {{ $slot }}
     </main>
     @include('layouts.footer')
+    @stack('scripts')
 </body>
 </html>

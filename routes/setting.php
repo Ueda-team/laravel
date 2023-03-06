@@ -13,6 +13,7 @@ Route::get('/setting/account', [Account::class, 'index'])->name('setting-account
 Route::post('/setting/account/avatar-change', [Account::class, 'avatarChange'])->name('setting-account-avatar-change');
 Route::post('/setting/account/username-change', [Account::class, 'usernameChange'])->name('setting-account-username-change');
 Route::post('/setting/account/userid-change', [Account::class, 'useridChange'])->name('setting-account-id-change');
+Route::post('/setting/account/description-change', [Account::class, 'descriptionChange'])->name('setting-account-description-change');
 
 Route::get('/setting/email', [Email::class, 'index'])->name('setting-email');
 Route::post('/setting/email/change', [Email::class, 'emailChange'])->name('setting-email-change');

@@ -6,6 +6,7 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
+        "@tailwindcss/typography": "^0.5.9",
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^0.27",
@@ -16,6 +17,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "@toast-ui/editor": "^3.2.2",
         "laravel-mix": "^6.0.49"
     }
 }

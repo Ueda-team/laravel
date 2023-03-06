@@ -1,4 +1,5 @@
 <x-app-layout>
+    @stack('styles')
     <div class="profile">
         <div class="profile-header">
             <img src="{!! $card !!}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-card.png') }}'">
@@ -20,8 +21,7 @@
                 </div>
             </div>
             <div class="profile-main-body-markdown">
-                <h3>課題代行はお任せください！</h3>
-                <p>コーディングからエラーの解決なんでもできます</p>
+                {!! $article->description !!}
             </div>
             <h3>出品中</h3>
             <div class="profile-main-work">
@@ -48,4 +48,5 @@
             </div>
         </div>
     </div>
+    @stack('scripts')
 </x-app-layout>

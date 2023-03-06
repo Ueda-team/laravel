@@ -52,6 +52,6 @@ class User extends Authenticatable
     public static function getAvatar($id): string
     {
         $user = User::where('id', $id)->first();
-        return R2::avatar_get($user->avatar);
+        return '<img src="' . R2::avatar_get($user->avatar) . '" alt="user avatar" onError="this.onerror=null;this.src=\'' . asset('img/no-icon.png') . '\'">';
     }
 }

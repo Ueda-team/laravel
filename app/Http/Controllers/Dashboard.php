@@ -23,23 +23,26 @@ use Illuminate\Support\Str;
 class Dashboard extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function index(): Factory|View|Application
+    public function index(): View|Factory|\Illuminate\Http\RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
         return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
-    public function work($id=""): Factory|View|Application
+    public function work($id=""): View|Factory|\Illuminate\Http\RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $works = Work::where('user_id', Auth::user()->id)->latest()->paginate(5);
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
         return view('dashboard.work', ['title' => '出品サービス管理', 'avatar' => $avatar, 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
-    public function work_add(): Factory|View|Application
+    public function work_add(): View|Factory|\Illuminate\Http\RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
@@ -87,8 +90,9 @@ class Dashboard extends BaseController
         return view('dashboard.work-ok', ['work' => $model]);
     }
 
-    public function auction_add(): Factory|View|Application
+    public function auction_add(): View|Factory|\Illuminate\Http\RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
@@ -132,12 +136,5 @@ class Dashboard extends BaseController
             'types' => $type
         ]);
         return view('dashboard.work-ok', ['work' => $model]);
-    }
-
-    public function work_all(): Factory|View|Application
-    {
-        $works = Work::get();
-        $page = Work::paginate(5);
-        return view('dashboard.work', ['works' => $works, 'page' => $page]);
     }
 }

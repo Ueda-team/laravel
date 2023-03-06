@@ -6,9 +6,9 @@
             @endif
             <div class="setting-account-avatar setting-box">
                 <h3>メールアドレス変更</h3>
-                　{{ Form::open(array('route' => array('setting-email-change'))) }}
+                {{ Form::open(array('route' => array('setting-email-change'))) }}
                 {{ Form::text('email', $user->email) }}
-                {{ Form::submit('保存', ['class' => '', '']) }}
+                {{ Form::submit('保存', ['class' => 'email_submit', '']) }}
                 {{ Form::close() }}
             </div>
         </div>

@@ -13,7 +13,7 @@
                 {{ Form::password('new_password') }} <br>
                 {{ Form::label('new2_password', 'パスワードを再入力してください') }}
                 {{ Form::password('new2_password') }} <br>
-                {{ Form::submit('保存', ['class' => '', '']) }}
+                {{ Form::submit('保存', ['class' => 'password_submit', '']) }}
                 {{ Form::close() }}
             </div>
         </div>

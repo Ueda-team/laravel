@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="auctionpost_wrapper">
         <h2 class="auctionpost_title">オークションに出品</h2>
-        {{ Form::open() }}
+        {{ Form::open(['enctype'=>"multipart/form-data"]) }}
         <table class="auctionpost_table">
             <tr>
                 <th class="auctionpost_th">{!! Form::label('category', 'カテゴリー') !!}</th>
@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('outline', 'サービス概要') !!}</th>
-                <td>{{ Form::textarea('outline') }}</td>
+                <td>{{ Form::textarea('outline', null, ['id' => "outline"]) }}</td>
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('start_price', '開始価格') !!}</th>
@@ -25,6 +25,20 @@
             <tr>
                 <th class="auctionpost_th">{!! Form::label('max_price', '即決価格') !!}</th>
                 <td>{{ Form::number('max_price', null) }}</td>
+            </tr>
+            <tr>
+                <th class="auctionpost_th"><label for="start_date">開始時間</label></th>
+                <td>
+                    <input type="datetime-local"
+                           name="start_date" value="{{ date('Y-m-d H:i:s', strtotime('+9hour')); }}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="auctionpost_th"><label for="end_date">終了時間</label></th>
+                <td>
+                    <input type="datetime-local"
+                           name="end_date" value="{{ date('Y-m-d H:i:s', strtotime('+9hour')); }}"/>
+                </td>
             </tr>
             <tr>
                 <th class="auctionpost_th">{!! Form::label('tag', 'タグ') !!}</th>

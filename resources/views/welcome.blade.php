@@ -67,7 +67,7 @@
                                 @foreach($list as $work)
                                     <a href="{{ url('/work/' . $work->id) }}">
                                         <div class="category1_first">
-                                            <img src={{ $work->getImage($work->id) }} onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                                            {!! $work->getImage($work->id) !!}
                                             <p class="ranking_outline">{{ $work->title }}</p>
                                             <div class="category_row">
                                                 <p class="ranking_worker">aaa</p>

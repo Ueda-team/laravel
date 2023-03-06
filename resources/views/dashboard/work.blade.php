@@ -7,7 +7,7 @@
             @foreach ($works as $work)
                 <a href=" {{ url('work/' . $work['id']) }}">
                     <div class='tablewrap'>
-                    <img class='work_image' src={{ $work->getImage($work->id) }} onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                    {!! $work->getImage($work->id, 'work_image') !!}
                     <table class='work_table'>
                         <tr><td>作品名</td><td>{{$work['title']}}</td>
                         <td>概要</td><td>{{$work['outline']}}</td></tr>

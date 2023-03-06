@@ -8,9 +8,9 @@
             <div class="setting-account-avatar setting-box">
                 <h3>アイコン変更</h3>
                 <div class="setting-account-avatar-img">
-                    <img src="{{ $user->getAvatar($user->id) }}" alt="" onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                    {!! $user->getAvatar($user->id) !!}
                 </div>
-                {{ Form::open(array('route' => array('setting-account-avatar-change'))) }}
+                {{ Form::open(array('route' => array('setting-account-avatar-change'), 'enctype'=>'multipart/form-data'), []) }}
                 {{ Form::label('file', 'ファイル') }}
                 {{ Form::file('file', $attributes = []) }}
                 {{ Form::submit('保存', ['class' => 'avatar_submit', '']) }}

@@ -41,10 +41,12 @@
                 @endif
             </div>
             <div class="auction-sub-user">
+                <p>出品者情報</p>
                 <div class="auction-sub-user-avatar">
+                    {!! $user->getAvatar($user->id) !!}
                 </div>
                 <div class="auction-sub-user-description">
-{{--                    <p>{{ $user->user_name }}</p>--}}
+                    <p>{{ $user->user_name }}</p>
                 </div>
             </div>
         </div>

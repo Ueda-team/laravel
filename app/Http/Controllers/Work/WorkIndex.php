@@ -22,6 +22,7 @@ class WorkIndex extends Controller
         $work = Work::where('id', $id)->first();
         if($work){
             if($work->auction_id !== 0) return redirect('/auction/' . $id);
+            $work->increment('preview', 1);
             $user = User::where('id', $work->user_id)->first();
             return view('work.index', ['work' => $work, 'user' => $user]);
         }else{

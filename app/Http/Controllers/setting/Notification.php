@@ -11,6 +11,6 @@ class Notification extends Controller
 {
     public function index(): Factory|View|Application
     {
-        return view('setting.index');
+        return view('setting.notification', ['title' => '通知']);
     }
 }

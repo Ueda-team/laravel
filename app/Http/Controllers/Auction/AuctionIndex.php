@@ -19,6 +19,7 @@ class AuctionIndex extends Controller
     {
         $work = Work::where('id', $id)->first();
         if($work){
+            $work->increment('preview', 1);
             $auction = Auction::where('id', $work->auction_id)->first();
             if($auction){
                 $user = User::where('id', $work->user_id)->first();

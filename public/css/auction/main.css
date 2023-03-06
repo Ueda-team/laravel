@@ -57,6 +57,10 @@
     font-size: 20px;
 }
 
+.auction-sub-body-end-date span {
+    font-size: 15px;
+}
+
 .auction-sub-bid {
     margin: 1rem 0 2rem 1rem;
 }

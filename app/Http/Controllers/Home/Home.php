@@ -8,6 +8,7 @@ use App\Models\Work;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class Home extends Controller
 {
@@ -16,7 +17,10 @@ class Home extends Controller
         $categories = Category::all();
         $lists = [];
         foreach ($categories as $category){
-            $lists[] = Work::where('category_id', $category->id)->orderBy('preview', 'desc')->take(10)->get();
+            $lists[] = Work::where([
+                ['category_id', '=', $category->id],
+                ['auction_id', '=', 0],
+            ])->orderBy('preview', 'desc')->take(4)->get();
         }
         return view('welcome', ['categories' => $categories, 'lists' => $lists]);
     }

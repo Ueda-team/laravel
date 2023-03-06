@@ -21,18 +21,14 @@
         </style>
 
         <!--------------------スライダー見た目-------------------------------------------------->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <l<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
         <!------------------------------------------------------------------------------------->
 
         <!--------------------jQuery----------------------------------------------------------->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <!------------------------------------------------------------------------------------->
-
-        <!--------------------スライダー動かすやつ----------------------------------------------->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-        <!------------------------------------------------------------------------------------->
-
 
     </head>
     <body class="antialiased">
@@ -40,23 +36,22 @@
 
     <x-app-layout>
         <div class="wrapper">
-            <div class="slider">
-                <div><img src="{{ asset('img/top-slide/slide-1.webp') }}"></div>
-                <div><img src="{{ asset('img/top-slide/slide-2.webp') }}"></div>
-                <div><img src="{{ asset('img/top-slide/slide-3.webp') }}"></div>
-            </div>
+            <ul class="slider">
+                <li><img src="{{ asset('/img/top-slide/purin-x.png') }}" alt=""></li>
+                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_02.jpg" alt=""></li>
+                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_03.jpg" alt=""></li>
+                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_04.jpg" alt=""></li>
+                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_05.jpg" alt=""></li>
+                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_06.jpg" alt=""></li>
+            </ul>
             <div class="main">
                 <div class="top_main">
                     <div class="info1">
                         <h2>カテゴリーから探す</h2>
                         <ul>
-                            <li><a href="{{ url('search/illust') }}">イラスト</a></li>
-                            <li><a href="{{ url('search/comic') }}">漫画</a></li>
-                            <li><a href="{{ url('search/design') }}">デザイン</a></li>
-                            <li><a href="{{ url('search/webcreate') }}">Webサイト制作</a></li>
-                            <li><a href="{{ url('search/webdesign') }}">Webデザイン</a></li>
-                            <li><a href="{{ url('search/movie') }}">動画・アニメーション</a></li>
-                            <li><a href="{{ url('search/programing') }}">IT・プログラミング</a></li>
+                            @foreach($categories as $categorie)
+                                <li><a href="{{ url('search/illust') }}">{{ $categorie->name }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="ranking">
@@ -65,16 +60,18 @@
                             <h2 class="category1">{{ $categories[$index]->name }}</h2>
                             <div class="ranking_categoly1">
                                 @foreach($list as $work)
-                                    <a href="{{ url('/work/' . $work->id) }}">
-                                        <div class="category1_first">
-                                            {!! $work->getImage($work->id) !!}
+                                    <div class="category1_first">
+                                        <a href="{{ url('/work/' . $work->id) }}">
+                                            <div class="category1_img">
+                                                {!! $work->getImage($work->id) !!}
+                                            </div>
                                             <p class="ranking_outline">{{ $work->title }}</p>
                                             <div class="category_row">
-                                                <p class="ranking_worker">aaa</p>
-                                                <p class="ranking_fee">{{ $work->price }}</p>
+                                                <p class="ranking_worker">{{ $work->getName($work->user_id) }}</p>
+                                                <p class="ranking_fee">{{ $work->price }}円</p>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 @endforeach
                             </div>
                         @endforeach
@@ -86,14 +83,21 @@
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
         <script>
             $('.slider').slick({
-                autoplay: true,       //自動再生
-                autoplaySpeed: 5000,  //自動再生のスピード
-                speed: 800,           //スライドするスピード
-                dots: true,           //スライド下のドット
-                arrows: true,         //左右の矢印
-                infinite: true,       //永久にループさせる
+                autoplay: true,//自動的に動き出すか。初期値はfalse。
+                infinite: true,//スライドをループさせるかどうか。初期値はtrue。
+                speed: 1000,//スライドのスピード。初期値は300。
+                slidesToShow: 3,//スライドを画面に3枚見せる
+                slidesToScroll: 1,//1回のスクロールで1枚の写真を移動して見せる
+                prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
+                nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
+                centerMode: true,//要素を中央ぞろえにする
+                variableWidth: true,//幅の違う画像の高さを揃えて表示
+                dots: true,//下部ドットナビゲーションの表示
             });
         </script>
     </x-app-layout>

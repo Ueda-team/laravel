@@ -20,6 +20,7 @@ Route::get('/', [Home::class, 'index'])->name('home');
 Route::get('/user/work-all', [UserIndex::class, 'work_all']);
 
 require __DIR__.'/company.php';
+require __DIR__.'/admin.php';
 
 require __DIR__.'/auth.php';
 require __DIR__.'/user.php';
@@ -30,3 +31,4 @@ require __DIR__.'/work.php';
 require __DIR__.'/search.php';
 require __DIR__.'/setting.php';
 require __DIR__.'/cart.php';
+require __DIR__.'/news.php';

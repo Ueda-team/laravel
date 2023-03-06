@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Lib\OpenAI;
 use App\Models\Auction;
 use App\Models\Category;
+use App\Models\News;
 use App\Models\Tag;
 use App\Models\Work;
 use App\Models\PersonalInformation;
@@ -15,6 +16,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -26,15 +28,16 @@ use JetBrains\PhpStorm\NoReturn;
 class Dashboard extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function index(): View|Factory|\Illuminate\Http\RedirectResponse|Application
+    public function index(): View|Factory|RedirectResponse|Application
     {
         if(!Auth::check()) return redirect()->route('login');
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
-        return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        $news = News::all()->take(5);
+        return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first(), 'news' => $news]);
     }
 
-    public function work($id=""): View|Factory|\Illuminate\Http\RedirectResponse|Application
+    public function work($id=""): View|Factory|RedirectResponse|Application
     {
         if(!Auth::check()) return redirect()->route('login');
         $works = Work::where('user_id', Auth::user()->id)->latest()->paginate(5);
@@ -43,7 +46,7 @@ class Dashboard extends BaseController
         return view('dashboard.work', ['title' => '出品サービス管理', 'avatar' => $avatar, 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
-    public function work_add(): View|Factory|\Illuminate\Http\RedirectResponse|Application
+    public function work_add(): View|Factory|RedirectResponse|Application
     {
         if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();
@@ -93,7 +96,7 @@ class Dashboard extends BaseController
         return view('dashboard.work-ok', ['work' => $model]);
     }
 
-    public function auction_add(): View|Factory|\Illuminate\Http\RedirectResponse|Application
+    public function auction_add(): View|Factory|RedirectResponse|Application
     {
         if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();

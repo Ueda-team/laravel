@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\setting\Account;
-use App\Http\Controllers\setting\Mail;
+use App\Http\Controllers\setting\Email;
 use App\Http\Controllers\setting\Notification;
 use App\Http\Controllers\setting\Password;
 use App\Http\Controllers\setting\Setting;
@@ -14,8 +14,10 @@ Route::post('/setting/account/avatar-change', [Account::class, 'avatarChange'])-
 Route::post('/setting/account/username-change', [Account::class, 'usernameChange'])->name('setting-account-username-change');
 Route::post('/setting/account/userid-change', [Account::class, 'useridChange'])->name('setting-account-id-change');
 
-Route::get('/setting/mail', [Mail::class, 'index'])->name('setting-mail');
+Route::get('/setting/email', [Email::class, 'index'])->name('setting-email');
+Route::post('/setting/email/change', [Email::class, 'emailChange'])->name('setting-email-change');
 
 Route::get('/setting/password', [Password::class, 'index'])->name('setting-password');
+Route::post('/setting/password/change', [Password::class, 'passwordChange'])->name('setting-password-change');
 
 Route::get('/setting/notification', [Notification::class, 'index'])->name('setting-notification');

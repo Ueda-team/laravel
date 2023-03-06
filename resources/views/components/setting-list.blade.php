@@ -7,7 +7,7 @@
             <div class="card-menu-list">
                 <ul>
                     <li><a href="{{ route('setting-account')  }}">プロフィール</a></li>
-                    <li><a href="{{ route('setting-mail')  }}">メールアドレス</a></li>
+                    <li><a href="{{ route('setting-email')  }}">メールアドレス</a></li>
                     <li><a href="{{ route('setting-password')  }}">パスワード</a></li>
                     <li><a href="{{ route('setting-notification')  }}">通知</a></li>
                     <li><a href="">ログアウト</a></li>

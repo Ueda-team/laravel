@@ -27,6 +27,7 @@ class Account extends Controller
         } while (R2::avatar_exists($ran_id));
         $avatar = $request->file('file');
         $path = isset($avatar) && R2::avatar_put($avatar, $ran_id);
+        dd($request->file('file'));
         if($path){
             $user->avatar = $ran_id;
             $user->save();
@@ -34,7 +35,6 @@ class Account extends Controller
         }else{
             return back()->with('change', false);
         }
-
     }
 
     public function usernameChange(Request $request)

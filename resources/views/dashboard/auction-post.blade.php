@@ -30,14 +30,14 @@
                 <th class="auctionpost_th"><label for="start_date">開始時間</label></th>
                 <td>
                     <input type="datetime-local"
-                           name="start_date" value="{{ date('Y-m-d H:i:s', strtotime('+9hour')); }}"/>
+                           name="start_date" value="{{ date('Y-m-d H:i:s') }}"/>
                 </td>
             </tr>
             <tr>
                 <th class="auctionpost_th"><label for="end_date">終了時間</label></th>
                 <td>
                     <input type="datetime-local"
-                           name="end_date" value="{{ date('Y-m-d H:i:s', strtotime('+9hour')); }}"/>
+                           name="end_date" value="{{ date('Y-m-d H:i:s') }}"/>
                 </td>
             </tr>
             <tr>

@@ -68,4 +68,23 @@
 .work_post input:hover{
     box-shadow: none;
 }
+.workok_wrap{
+    margin: 2% 7%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.workok_wrap p{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.goback{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
 

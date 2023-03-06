@@ -2,7 +2,7 @@
     <x-dashboard :user="$user" :pi="$pi" :title="$title" :avatar="$avatar">
             <div class="article_wrapper">
                 <div class="news">
-                    <h2 class="dashboard_news">ニュース</h2>
+                    <h2 class="dashboard_news"><a href="{{ url('news/list') }}">ニュース</a></h2>
                     <p>news</p>
                     <p>news</p>
                 </div>

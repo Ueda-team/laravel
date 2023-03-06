@@ -25,3 +25,4 @@ require __DIR__.'/dashboard.php';
 require __DIR__.'/dm.php';
 require __DIR__.'/auction.php';
 require __DIR__.'/search.php';
+require __DIR__.'/news.php';

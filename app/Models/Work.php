@@ -48,4 +48,10 @@ class Work extends Authenticatable
         $work = WorkFile::where('work_id', $id)->first();
         return '<img src="' . R2::work_get($work ? $work->name : null) . '" class="' . $class . '"alt="user avatar" onError="this.onerror=null;this.src=\'' . asset('img/sampleimage.png') . '\'">';
     }
+
+    public static function getName($id)
+    {
+        $user = User::where('id', $id)->first();
+        return $user->user_name;
+    }
 }

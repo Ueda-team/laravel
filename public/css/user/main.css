@@ -33,7 +33,17 @@
 .profile-main-header-follow {
     margin-right: 5%;
     margin-top: 1.5rem;
+}
+
+.profile-main-header-follow form {
     cursor: pointer;
+}
+
+.profile-main-header-follow input {
+    padding: 0.25rem 1rem;
+    font-size: 1.5em;
+    border: 1px solid #4B4B4B;
+    border-radius: 30px;
 }
 
 .profile-main-header-follow a {

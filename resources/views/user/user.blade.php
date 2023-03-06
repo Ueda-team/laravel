@@ -13,11 +13,21 @@
                     <div class="profile-main-header-description-text">
                         <p class="profile-main-header-description-name">{{ $user->user_name }}</p>
                         <p class="profile-main-header-description-id">{{ '@'. $user->user_id }}</p>
-                        <p class="profile-main-header-description-follower">フォロワー: 2024人</p>
+                        <p class="profile-main-header-description-follower">フォロワー: {{ $follower }}人</p>
                     </div>
                 </div>
                 <div class="profile-main-header-follow">
-                    <a>フォロー</a>
+                    @if($isFollow === -1)
+                        <a href="{{ route('setting') }}">設定</a>
+                    @elseif($isFollow === 0)
+                        {{ Form::open(array('route' => array('user-follow', 'user_id' => $user->id))) }}
+                        {{ Form::submit('フォロー', ['class' => '']) }}
+                        {{ Form::close() }}
+                    @else
+                        {{ Form::open(array('route' => array('user-unfollow', 'user_id' => $user->id))) }}
+                        {{ Form::submit('アンフォロー', ['class' => '']) }}
+                        {{ Form::close() }}
+                    @endif
                 </div>
             </div>
             <div class="profile-main-body-markdown">

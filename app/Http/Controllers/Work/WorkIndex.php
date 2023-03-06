@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\work;
+namespace App\Http\Controllers\Work;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auction_buy;

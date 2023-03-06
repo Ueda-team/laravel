@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\setting\Account;
-use App\Http\Controllers\setting\Email;
-use App\Http\Controllers\setting\Notification;
-use App\Http\Controllers\setting\Password;
-use App\Http\Controllers\setting\Setting;
+use App\Http\Controllers\Setting\Account;
+use App\Http\Controllers\Setting\Email;
+use App\Http\Controllers\Setting\Notification;
+use App\Http\Controllers\Setting\Password;
+use App\Http\Controllers\Setting\Setting;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/setting', [Setting::class, 'index'])->name('setting');

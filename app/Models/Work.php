@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\WorkFile;
 use App\Lib\R2;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,9 +43,9 @@ class Work extends Authenticatable
         'verified_at' => 'datetime',
     ];
 
-    public static function getImage($id): string
+    public static function getImage($id, $class=""): string
     {
-        $workFile = WorkFile::where('work_id', $id)->first();
-        return R2::work_get($workFile->name);
+        $work = WorkFile::where('work_id', $id)->first();
+        return '<img src="' . R2::work_get($work ? $work->name : null) . '" class="' . $class . '"alt="user avatar" onError="this.onerror=null;this.src=\'' . asset('img/sampleimage.png') . '\'">';
     }
 }

@@ -34,10 +34,10 @@
                         {{ Form::submit('即決で購入する',['class' => 'auction-sub-submit auction-sub-pd-submit']) }}
                         {{ Form::close() }}
                     @else
-                        <p>オークションは終了しました</p>
+                        <p>オークションは落札されました</p>
                     @endif
                 @else
-                    <p>オークションは落札されました</p>
+                    <p>オークションは終了しました</p>
                 @endif
             </div>
             <div class="auction-sub-user">

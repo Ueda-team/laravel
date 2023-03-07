@@ -1,9 +1,9 @@
 <x-app-layout>
-    <div>
-        <div>
+    <div class="newsone_wrapper">
+        <div class="newsone_title">
             <h3>{{ $news->title }}</h3>
         </div>
-        <div>
+        <div class="newsone_detail">
             <p>{{ $news->detail }}</p>
         </div>
     </div>

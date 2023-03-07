@@ -38,11 +38,9 @@
         <div class="wrapper">
             <ul class="slider">
                 <li><img src="{{ asset('/img/top-slide/purin-x.png') }}" alt=""></li>
-                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_02.jpg" alt=""></li>
-                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_03.jpg" alt=""></li>
-                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_04.jpg" alt=""></li>
-                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_05.jpg" alt=""></li>
-                <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_06.jpg" alt=""></li>
+                <li><img src="{{ asset('/img/top-slide/World.png') }}" alt=""></li>
+                <li><img src="{{ asset('/img/top-slide/World_1.png') }}" alt=""></li>
+                <li><img src="{{ asset('/img/top-slide/World_3.png') }}" alt=""></li>
             </ul>
             <div class="main">
                 <div class="top_main">

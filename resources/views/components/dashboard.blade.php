@@ -18,7 +18,9 @@
                     <li><a href="{{ route('dashboard-work') }}">出品管理</a></li>
                     <li><a href="{{ route('follow-list') }}">フォローリスト</a></li>
                     <li><a href="{{ route('dm') }}">メッセージ</a></li>
-                    <li><a href="{{ route('admin') }}">管理者ページ</a></li>
+                    @if($user->isAdmin($user->id))
+                        <li><a href="{{ route('admin') }}">管理者ページ</a></li>
+                    @endif
                 </ul>
             </div>
         </div>

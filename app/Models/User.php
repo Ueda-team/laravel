@@ -54,4 +54,10 @@ class User extends Authenticatable
         $user = User::where('id', $id)->first();
         return '<img src="' . R2::avatar_get($user->avatar) . '" alt="user avatar" onError="this.onerror=null;this.src=\'' . asset('img/no-icon.png') . '\'">';
     }
+
+    public static function isAdmin($id): bool
+    {
+        $user = PersonalInformation::where('user_id', $id)->first();
+        return $user->admin;
+    }
 }

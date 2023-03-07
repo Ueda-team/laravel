@@ -6,17 +6,15 @@
 }
 /*ALTElogo*/
 .logo {
-    width: 40%;
     display: flex;
     margin: auto 0 auto 3%;
 }
 .logo a img {
-    width: 135px;
+    width: 300px;
     margin: 0 10px;
 }
 .logo a {
     text-decoration: none;
-
 }
 /*search*/
 .search {

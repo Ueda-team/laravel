@@ -2,7 +2,7 @@
     <div class="auction-content">
         <div class="auction-main">
             <div class="auction-image">
-                <img src={{ $work->getImage($work->id) }} onError="this.onerror=null;this.src='{{ asset('img/no-icon.png') }}';">
+                {!! $work->getImage($work->id) !!}
             </div>
             <div class="auction-sub">
                 <div class="auction-sub-top">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="auction-sub-body">
                     <div class="auction-sub-body-flex">
-                        <p>残り<span>1</span> 日</p>
+{{--                        <p>残り<span>1</span> 日</p>--}}
                     </div>
                     {{--                <p>終了予定時刻<span></span></p>--}}
                 </div>

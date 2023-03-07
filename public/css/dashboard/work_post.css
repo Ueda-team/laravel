@@ -69,3 +69,40 @@
     box-shadow: none;
 }
 
+.workok_wrapper{
+    margin: 2% 7%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding-bottom: 300px;
+}
+.workok_wrapper p{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.workok_wrap{
+    width: 800px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.workok_wrap a{
+    font-size: 20px;
+    border-radius: 0.5rem;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0.625rem 2.5rem;
+    max-width: 250px;
+    color: #FFF;
+    cursor: pointer;
+    background: rgb(149,202,252);
+    background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
+    box-shadow: 3px 5px  #939292;
+}
+.workok_wrap a:hover{
+    box-shadow: none;
+    color:#FFF;
+}

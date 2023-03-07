@@ -30,7 +30,6 @@
                 <ul class="menu__second-level">
                     <li><a href="{{ url('/users/' .  Auth::user()->user_id) }}">プロフィール</a></li>
                     <li><a href="{{ url('dashboard') }}">ダッシュボード</a></li>
-                    <li><a href="{{ url('dm') }}">メッセージ</a></li>
                     <li><a href="{{ url('setting') }}">設定</a></li>
                     <li><form method="POST" action="{{ route('logout') }}">
                             @csrf

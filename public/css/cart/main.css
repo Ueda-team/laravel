@@ -1,3 +1,14 @@
+.cart_wrapper{
+    margin: 2% 7%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+.cart_wrapper p{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 40px;
+}
 .work_link{
     border: 1px solid;
     padding: 10px 20px;

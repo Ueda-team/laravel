@@ -42,7 +42,9 @@
                 <li><img src="{{ asset('/img/top-slide/World_1.png') }}" alt=""></li>
                 <li><img src="{{ asset('/img/top-slide/World_3.png') }}" alt=""></li>
             </ul>
+
             <div class="main">
+                <h2 class="top-title">マーケット</h2>
                 <div class="top_main">
                     <div class="info1">
                         <h2>カテゴリーから探す</h2>

@@ -23,7 +23,7 @@
         <div class="menu-wrapper">
             <ul class="menu">
                 <li class="menu__single"><a href="{{ route('cart') }}"><img src={{ asset("img/cart.png") }} alt="cart"></a></li>
-                <li class="menu__single"><img src={{ asset("img/auction.png") }} alt="info"></li>
+                <li class="menu__single"><a href="{{ route('auctions') }}"><img src={{ asset("img/auction.png") }} alt="info"></a></li>
                 <li class="menu__single"><img src={{ asset("img/heart.png") }} alt="auction"></li>
                 <li class="menu__single"><img src={{ asset("img/bell.png") }} alt="iine"></li>
                 <li class="menu__single">

@@ -5,8 +5,12 @@
 
 @import url("welcome.css");
 @import url("dashboard/main.css");
-
+@import url("auction/main.css");
 @import url("user/main.css");
+@import url('setting/main.css');
+@import url('cart/main.css');
+
+@import url("search/main.css");
 
 html {
 }
@@ -23,4 +27,21 @@ body {
 
 main {
     flex: 1;
+}
+
+h1,h2,h3,h4,h5,h6 { margin-bottom : 24px}
+/* 垂直方向のマージンを統一 */
+
+h1 {
+    font-size : 48px;
+}
+
+h2 {
+    font-size : 36px;
+}
+h3 {
+    font-size : 24px;
+}
+hgroup h2,h4,h5,h6 {
+    font-size : 16px;
 }

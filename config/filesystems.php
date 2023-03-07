@@ -78,6 +78,16 @@ return [
             'throw' => false,
         ],
 
+        'r2_work' => [
+            'driver' => 's3',
+            'key' => env('CLOUDFLARE_R2_ACCESS_KEY'),
+            'region' => 'us-east-1',
+            'visibility' => 'private',
+            'secret' => env('CLOUDFLARE_R2_SECRET_KEY'),
+            'bucket' => env('CLOUDFLARE_R2_BUCKET_WORK'),
+            'endpoint' => env('CLOUDFLARE_R2_ENDPOINT'),
+            'throw' => false,
+        ],
     ],
 
     /*

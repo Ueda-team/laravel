@@ -2,40 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Lib\OpenAI;
 use App\Models\Auction;
 use App\Models\Category;
+use App\Models\News;
+use App\Models\Tag;
 use App\Models\Work;
 use App\Models\PersonalInformation;
+use App\Models\WorkFile;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\Lib\R2;
+use Illuminate\Support\Str;
+use JetBrains\PhpStorm\NoReturn;
 
 
 class Dashboard extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function index(): Factory|View|Application
+    public function index(): View|Factory|RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $user = Auth::user();
         $avatar = R2::avatar_get($user->avatar);
-        return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        $news = News::all()->take(5);
+        return view('dashboard.dashboard', ['avatar' => $avatar, 'user' => $user, 'title' => 'ダッシュボード',  'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first(), 'news' => $news]);
     }
 
-    public function work($id=""): Factory|View|Application
+    public function work($id=""): View|Factory|RedirectResponse|Application
     {
-        $works = Work::where('user_id', Auth::user()->id)->paginate(5);
-        return view('dashboard.work', ['title' => '出品サービス管理', 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
+        if(!Auth::check()) return redirect()->route('login');
+        $works = Work::where('user_id', Auth::user()->id)->latest()->paginate(5);
+        $user = Auth::user();
+        $avatar = R2::avatar_get($user->avatar);
+        return view('dashboard.work', ['title' => '出品サービス管理', 'avatar' => $avatar, 'works' => $works, 'user' => Auth::user(), 'pi' => PersonalInformation::where('user_id', Auth::user()->id)->first()]);
     }
 
-    public function work_add(): Factory|View|Application
+    public function work_add(): View|Factory|RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
@@ -47,17 +60,10 @@ class Dashboard extends BaseController
 
     public function work_post(Request $request): Application|Factory|View
     {
-        // アップロードされたファイルの取得
-        $image = $request->file('file');
-        // ファイルの保存とパスの取得
-        $path = isset($image) ? $image->store('items', 'public') : '';
-
-
         $title = $request['title'];
         $outline = $request['outline'];
         $price = $request['price'];
         $tag = $request['tag'];
-        $file = $request['file'];
         $category = $request['category'];
         $work = new Work();
         $model = $work->create([
@@ -65,20 +71,34 @@ class Dashboard extends BaseController
             'outline' => $outline,
             'price' => $price,
             'tag' => $tag,
-            'file' => $file,
             'category_id' => $category,
             'preview' => 0,
-            'url' => $path,
+            'url' => '',
             'user_id' => Auth::user()->id,
             'auction_id' => 0,
             'buy_id' => 0,
             'types' => 0
         ]);
+
+        //画像の保存
+        do {
+            $ran_id = $model->id . Str::random(7);
+        } while (R2::work_exists($ran_id));
+        $image = $request->file('file');
+        $path = isset($image) && R2::work_put($image, $ran_id);
+        if($path){
+            $workFile = new WorkFile();
+            $workFile->create([
+                'work_id' => $model->id,
+                'name' => $ran_id
+            ]);
+        }
         return view('dashboard.work-ok', ['work' => $model]);
     }
 
-    public function auction_add(): Factory|View|Application
+    public function auction_add(): View|Factory|RedirectResponse|Application
     {
+        if(!Auth::check()) return redirect()->route('login');
         $categories = Category::all();
         $sort = [];
         $sort[] = '選択してください';
@@ -94,15 +114,17 @@ class Dashboard extends BaseController
         $outline = $request['outline'];
         $start_price = $request['start_price'];
         $max_price = $request['max_price'];
-        $tag = $request['tag'];
         $file = $request['file'];
         $category = $request['category'];
+        $type = $request['type'];
+        $start_date = $request['start_date'];
+        $end_date = $request['end_date'];
         $auction = new Auction();
         $auctionModel = $auction->create([
             'start_price' => $start_price,
             'max_price' => $max_price,
-            'start_date' => now(),
-            'end_date' => now(),
+            'start_date' => $start_date,
+            'end_date' => $end_date,
             'status' => true
         ]);
         $work = new Work();
@@ -110,22 +132,47 @@ class Dashboard extends BaseController
             'title' => $title,
             'outline' => $outline,
             'price' => $start_price,
-            'tag' => $tag,
+            'tag' => '',
             'file' => $file,
             'category_id' => $category,
             'preview' => 0,
             'url' => '',
             'user_id' => Auth::user()->id,
             'auction_id' => $auctionModel->id,
-            'buy_id' => 0
+            'buy_id' => 0,
+            'types' => $type
         ]);
+        $tags = explode(' ', $request['tag']);
+        $tags = array_splice($tags, 5);
+        foreach ($tags as $tag){
+            $modelTag = new Tag();
+            $modelTag->create([
+                'work_id' => $model->id,
+                'name' => $tag
+            ]);
+        }
+
+        //画像の保存
+        do {
+            $ran_id = $model->id . Str::random(7);
+        } while (R2::work_exists($ran_id));
+        $image = $request->file('file');
+        $path = isset($image) && R2::work_put($image, $ran_id);
+        if($path){
+            $workFile = new WorkFile();
+            $workFile->create([
+                'work_id' => $model->id,
+                'name' => $ran_id
+            ]);
+        }
         return view('dashboard.work-ok', ['work' => $model]);
     }
 
-    public function work_all(): Factory|View|Application
+    #[NoReturn] public function tag(Request $request)
     {
-        $works = Work::get();
-        $page = Work::paginate(5);
-        return view('dashboard.work', ['works' => $works, 'page' => $page]);
+        header("Content-type: application/json; charset=UTF-8");
+        $return_data = explode(' ', OpenAI::send_prompt('"'.$request['data'].'"というサービス内容に合うタグを5つ半角スペース区切りで考えてください'));
+        echo json_encode($return_data);
+        exit;
     }
 }

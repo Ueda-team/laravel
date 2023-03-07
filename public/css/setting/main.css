@@ -1,0 +1,27 @@
+@import url('account.css');
+
+.card-menu-top{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 38px 0 30px;
+}
+.card-menu-list{
+    font-size: 18px;
+}
+.card-menu-list li{
+    margin: 8px 0;
+}
+.card-menu-list li:hover{
+    background-color: #f5f5f5;
+}
+
+.setting-title {
+    margin: 50px 0;
+    padding: 7px 18px;
+    font-size: 2em;
+    font-weight: bold;
+    border-left-width: 10px;
+    border-color: #4b4b4b;
+}
+
+
